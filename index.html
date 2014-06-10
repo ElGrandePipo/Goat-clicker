@@ -52,7 +52,7 @@
                 <br />                
 
                 <br />
-                <button id="btnReinit">Reinitialiser</button>
+                <button id="lancerAutoProduction">[CHEAT] Auto production</button> | <button id="btnReinit">Reinitialiser</button>
 
             </div>
             <div class="col-md-5">
@@ -100,9 +100,10 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/sound.js"></script>
     <script type="text/javascript" src="Scripts/banque.js"></script>
-     <script type="text/javascript" src="Scripts/competence.js"></script>
-      <script type="text/javascript" src="Scripts/joueur.js"></script>
+    <script type="text/javascript" src="Scripts/competence.js"></script>
+    <script type="text/javascript" src="Scripts/joueur.js"></script>
     <script type="text/javascript" src="Scripts/magasins.js"></script>
     <script type="text/javascript" src="Scripts/si.js"></script>
     <script type="text/javascript">
@@ -119,33 +120,17 @@
             var mainGoat = $("#mainGoat");
             var lblNbClick = $("#lblNbClick");
             var goatclickproducer_cost = $("#goatclickproducer_cost");
+            var lancerAutoProduction = $("#lancerAutoProduction");
 
             if (retrievedObject != null) {
                 lblNbClick.text(retrievedObject);
                 nbClick = retrievedObject;
             }
 
-
-            function startSound(src) {
-                var audioElement = document.createElement('audio');
-                audioElement.setAttribute('src', src);
-                audioElement.play();
-            }
-
-            function Sound() {
-                this.id;
-                this.label;
-                this.src;
-
-                Sound.prototype.getHtml = function() {
-                    return '<div class="span3"><a class="btn btn-primary btn-large" id="' + this.id + '">' + this.label + '</a></div>';
-                }
-            }
-
-            function endsWith(str, suffix) {
-                return str.indexOf(suffix, str.length - suffix.length) !== -1;
-            }
-
+            var interval;
+            lancerAutoProduction.click(function(){
+                interval = setInterval(function(){ mainGoat.trigger("click");}, 1000);
+            }); 
 
             function calculCost(niveauProduit, nbDejaAchete)
             {
@@ -189,6 +174,7 @@
             });
 
             $("#btnReinit").click(function () {
+                clearInterval(interval);
                 localStorage.removeItem("nbClick");
                 nbClick = 0;
                 lblNbClick.text(nbClick);
