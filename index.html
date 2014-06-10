@@ -35,7 +35,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="standard-block">GOAT CLICKER</h2>
+                    <h2 class="standard-block">LET'S GOAT SOME GOATS</h2>
                 </div>
             </div>
         </div>
@@ -48,14 +48,14 @@
                 <p id="scoringclick"></p>
                 <br />
                 
-                Nombre de click :
+                GOAT$$ :
         <label id="lblNbClick"></label>
                 <br />
                 <button id="btnReinit">Reinitialiser</button>
 
             </div>
             <div class="col-md-3">
-                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;" id="goatclickproducer">GOAT CLICK PRODUCER</div>
                 <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
                 <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
                 <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
@@ -107,6 +107,8 @@
                 nbClick = retrievedObject;
             }
 
+            $("#lblNbClick").text(nbClick);
+
             $("#mainGoat").click(function () {
 
                 nbClick++;
@@ -115,13 +117,11 @@
                 
 
                 var label = $("<label>").attr('id', "lblplus");
-                label.attr('style', 'position:absolute;top:60px;font-size:18px;');
-                
+                label.attr('style', 'position:absolute;top:60px;font-size:18px;');              
       
 
                 label.insertAfter('#scoringclick');
                 label.text("+" + production_manuelle);
-                //label.show();
                 label.animate({
                     opacity: 0,
                     top: "-=30"
@@ -136,6 +136,10 @@
                 nbClick = 0;
                 $("#lblNbClick").text(nbClick);
             });
+
+            var joueur = function () {
+
+            };
         });
     </script>
 </body>
