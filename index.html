@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8" />
     <title>Goat clicker</title>
     <link href="Content/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Content/css/styles.css">
@@ -108,6 +109,8 @@
         $(function () {
 
             var retrievedObject = localStorage.getItem('nbClick');
+            
+            // Corresponds à la monnaie finalement (devra être déduite lors d'un achat)
             var nbClick = 0;
             var production_manuelle = 1;
             var production_autmatique = 0;
@@ -122,6 +125,28 @@
                 nbClick = retrievedObject;
             }
 
+
+            function startSound(src) {
+                var audioElement = document.createElement('audio');
+                audioElement.setAttribute('src', src);
+                audioElement.play();
+            }
+
+            function Sound() {
+                this.id;
+                this.label;
+                this.src;
+
+                Sound.prototype.getHtml = function() {
+                    return '<div class="span3"><a class="btn btn-primary btn-large" id="' + this.id + '">' + this.label + '</a></div>';
+                }
+            }
+
+            function endsWith(str, suffix) {
+                return str.indexOf(suffix, str.length - suffix.length) !== -1;
+            }
+
+
             function calculCost(niveauProduit, nbDejaAchete)
             {
                 // TODO : Mieux ajuster le coût réel d'une compétence
@@ -131,7 +156,7 @@
             lblNbClick.text(nbClick);
 
             mainGoat.click(function () {
-
+                startSound("Sounds/chevre1-3.mp3");
                 mainGoat.animate({
                     height : "-=20",
                     width : "-=20"
