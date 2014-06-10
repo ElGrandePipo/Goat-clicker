@@ -1,39 +1,141 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript">
-	    $(function () {
+    <title>Goat clicker</title>
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Content/css/styles.css">
+    <link rel="stylesheet" href="Content/css/queries.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-	        var retrievedObject = localStorage.getItem('nbClick');
-	        var nbClick = 0;
-
-	        if (retrievedObject != null) {
-	            $("#lblNbClick").text(retrievedObject);
-	            nbClick = retrievedObject;
-	        }
-
-	        $("#mainGoat").click(function () {
-
-	            nbClick++;
-	            $("#lblNbClick").text(nbClick);
-	            localStorage.setItem('nbClick', nbClick);
-	        });
-
-	        $("#btnReinit").click(function () {
-	            if (confirm("Attention ca remettra le compteur à zéro !")) { // Clic sur OK
-	                localStorage.removeItem("nbClick");
-	                nbClick = 0;
-	                $("#lblNbClick").text(nbClick);
-	            }
-	        });
-	    });
-	</script>
 </head>
 <body>
-	<img src="Content/img/maingoat.jpg" style="width:150px;" id="mainGoat" alt="main goat"/>
-	
-	<br/>
-	Nombre de click : <label id="lblNbClick"></label><br/>
-	<button id="btnReinit">Reinitialiser</button>
+    <header class="clearfix" id="accueil">
+        <div class="logo col-md-3">
+            <h2 class="logo-text">GOAT CLICKER</h2>
+        </div>
+        <nav class="clearfix">
+            <ul class="clearfix">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+            </ul>
+        </nav>
+        <div class="pullcontainer">
+            <a href="#" id="pull"><i class="fa fa-bars fa-2x"></i></a>
+        </div>
+    </header>
+
+    <div class="h2-wrap" id="titre">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="standard-block">GOAT CLICKER</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container carousel">
+        <div class="row">
+            <div class="col-md-7">
+                <img src="Content/img/maingoat.jpg" style="width: 300px;" id="mainGoat" alt="main goat" />
+                <p id="scoringclick"></p>
+                <br />
+                
+                Nombre de click :
+        <label id="lblNbClick"></label>
+                <br />
+                <button id="btnReinit">Reinitialiser</button>
+
+            </div>
+            <div class="col-md-3">
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+                <div style="border-bottom: 1px solid #808080; height: 50px; padding: 10px;">GOAT CLICK PRODUCER</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h2>GOAT CLICKER</h2>
+
+                </div>
+                <div class="col-md-4">
+                    <p>Ce jeu a été développé par Yves Philippot, Paul Fournier et Damien Laporte</p>
+                </div>
+                <div class="col-md-3">
+                    <p>On est cool</p>
+                </div>
+                <div class="col-md-2">
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var retrievedObject = localStorage.getItem('nbClick');
+            var nbClick = 0;
+            var production_manuelle = 1;
+            var production_autmatique = 0;
+
+            if (retrievedObject != null) {
+                $("#lblNbClick").text(retrievedObject);
+                nbClick = retrievedObject;
+            }
+
+            $("#mainGoat").click(function () {
+
+                nbClick++;
+                $("#lblNbClick").text(nbClick);
+                localStorage.setItem('nbClick', nbClick);
+                
+
+                var label = $("<label>").attr('id', "lblplus");
+                
+      
+
+                label.insertAfter('#scoringclick');
+                label.text("+" + production_manuelle);
+                //label.show();
+                label.animate({
+                    opacity: 0,
+                    top: "-=30"
+                }, "slow", function () {
+                    label.remove();
+                });
+              
+            });
+
+            $("#btnReinit").click(function () {
+                localStorage.removeItem("nbClick");
+                nbClick = 0;
+                $("#lblNbClick").text(nbClick);
+            });
+        });
+    </script>
 </body>
 </html>
