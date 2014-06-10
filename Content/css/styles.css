@@ -1103,3 +1103,16 @@ footer {
 #popup h4 {
     border-bottom: 1px solid #586165;
 }
+
+.competence
+{
+    border-bottom: 1px solid #808080; 
+    height: 50px; 
+    padding: 10px;
+    cursor: hand;
+}
+
+.competence:hover
+{
+    cursor: hand;
+}
