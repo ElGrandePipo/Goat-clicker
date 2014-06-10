@@ -1,0 +1,39 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+	    $(function () {
+
+	        var retrievedObject = localStorage.getItem('nbClick');
+	        var nbClick = 0;
+
+	        if (retrievedObject != null) {
+	            $("#lblNbClick").text(retrievedObject);
+	            nbClick = retrievedObject;
+	        }
+
+	        $("#mainGoat").click(function () {
+
+	            nbClick++;
+	            $("#lblNbClick").text(nbClick);
+	            localStorage.setItem('nbClick', nbClick);
+	        });
+
+	        $("#btnReinit").click(function () {
+	            if (confirm("Attention ca remettra le compteur à zéro !")) { // Clic sur OK
+	                localStorage.removeItem("nbClick");
+	                nbClick = 0;
+	                $("#lblNbClick").text(nbClick);
+	            }
+	        });
+	    });
+	</script>
+</head>
+<body>
+	<img src="Content/img/maingoat.jpg" style="width:150px;" id="mainGoat" alt="main goat"/>
+	
+	<br/>
+	Nombre de click : <label id="lblNbClick"></label><br/>
+	<button id="btnReinit">Reinitialiser</button>
+</body>
+</html>
