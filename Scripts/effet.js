@@ -2,7 +2,7 @@
  * Created by Damien on 6/10/14.
  */
 var EVariableEffet = {"qualiteLait":1, "ratioProductionLait":2, "espaceConsomme":3, "niveauCommercant":4};
-Object.freeze(EMorality);
+Object.freeze(EVariableEffet);
 
 function Effet(enumEffet, modificateur){
     this.Effet = enumEffet;
