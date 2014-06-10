@@ -35,6 +35,6 @@ function MagasinNeutre(){
     );
 }
 
-function MagasinDémonique(){
+function MagasinDemonique(){
     this.Magasin = new Magasin("Magasin démoniaque");
 }
