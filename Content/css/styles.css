@@ -1116,3 +1116,10 @@ footer {
 {
     cursor: hand;
 }
+
+.plusone
+{
+   position:absolute;
+   top:60px;
+   font-size:18px;
+}
