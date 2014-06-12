@@ -52,14 +52,14 @@
                 <br />                
 
                 <br />
-                <button id="lancerAutoProduction">[CHEAT] Auto production</button> | <button id="btnReinit">Reinitialiser</button>
+                <button id="lancerAutoProduction">[CHEAT] Auto production</button> | <button id="btnSave">Save</button> | <button id="btnReinit">Reinitialiser</button>
 
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5" id="beginnerStore">
                 <div class="h2-wrap">
                     <h2 class="standard-block">GOATS STORE</h2>
                 </div>
-                <div class="competence" id="goatclickproducer">GOAT CLICK PRODUCER
+                <!--<div class="competence" id="goatclickproducer">GOAT CLICK PRODUCER
                     <br/>
                     COST : <label id="goatclickproducer_cost"></label> GOAT$$</div>
                 <div class="competence">GOAT CLICK PRODUCER</div>
@@ -69,7 +69,7 @@
                 <div class="competence">GOAT CLICK PRODUCER</div>
                 <div class="competence">GOAT CLICK PRODUCER</div>
                 <div class="competence">GOAT CLICK PRODUCER</div>
-                <div class="competence">GOAT CLICK PRODUCER</div>
+                <div class="competence">GOAT CLICK PRODUCER</div>-->
             </div>
         </div>
     </div>
@@ -103,34 +103,56 @@
     <script type="text/javascript" src="Scripts/sound.js"></script>
     <script type="text/javascript" src="Scripts/banque.js"></script>
     <script type="text/javascript" src="Scripts/competence.js"></script>
-    <script type="text/javascript" src="Scripts/joueur.js"></script>
+    <script type="text/javascript" src="Scripts/player.js"></script>
     <script type="text/javascript" src="Scripts/magasins.js"></script>
     <script type="text/javascript" src="Scripts/si.js"></script>
+    <script type="text/javascript" src="Scripts/begin.js"></script>
+    <script type="text/javascript" src="Scripts/importexport.js"></script>
     <script type="text/javascript">
         $(function () {
 
-            var retrievedObject = localStorage.getItem('nbClick');
+            var chaineSave = getSauvegarde();
+            var retrievedObject = JSON.parse(chaineSave);
+
             
             // Corresponds à la monnaie finalement (devra être déduite lors d'un achat)
             var nbClick = 0;
             var production_manuelle = 1;
             var production_autmatique = 0;
 
-
+            //----------------------------------------------------------
             var mainGoat = $("#mainGoat");
             var lblNbClick = $("#lblNbClick");
             var goatclickproducer_cost = $("#goatclickproducer_cost");
             var lancerAutoProduction = $("#lancerAutoProduction");
+            var btnSave = $("#btnSave");
+            //----------------------------------------------------------
 
             if (retrievedObject != null) {
-                lblNbClick.text(retrievedObject);
-                nbClick = retrievedObject;
+                lblNbClick.text(retrievedObject.nbClick);
+                nbClick = retrievedObject.nbClick;
+            }
+            else
+            {
+                retrievedObject = getSauvegardeObject();
             }
 
             var interval;
             lancerAutoProduction.click(function(){
                 interval = setInterval(function(){ mainGoat.trigger("click");}, 1000);
             }); 
+
+            var beginnerStore = generateBeginnerStore();
+
+            for (var i = 0; i < beginnerStore.length; i++) {
+                var blocHtml ='<div class="competence" id="goat'+ beginnerStore[i].Nom + '">' + beginnerStore[i].Description + '<br/><br/>COST : <label id="goat' + beginnerStore[i].Nom + '_cost"></label> ' + beginnerStore[i].Prix +' GOAT$$</div>';
+
+                $("#beginnerStore").append(blocHtml);                
+            }
+
+            btnSave.click(function() {
+                setSauvegarde(retrievedObject);
+            });
 
             function calculCost(niveauProduit, nbDejaAchete)
             {
@@ -156,11 +178,12 @@
 
                 nbClick++;
                 lblNbClick.text(nbClick);
-                localStorage.setItem('nbClick', nbClick);                
+                               
+                retrievedObject.nbClick = nbClick;
+                setSauvegarde(retrievedObject);
 
                 var label = $("<label>").attr('id', "lblplus");
-                label.attr('class', 'plusone');             
-      
+                label.attr('class', 'plusone');
 
                 label.insertAfter('#scoringclick');
                 label.text("+" + production_manuelle);
@@ -175,7 +198,7 @@
 
             $("#btnReinit").click(function () {
                 clearInterval(interval);
-                localStorage.removeItem("nbClick");
+                supprimerSauvegarde();
                 nbClick = 0;
                 lblNbClick.text(nbClick);
             });

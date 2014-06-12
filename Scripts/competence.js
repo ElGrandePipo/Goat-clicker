@@ -14,9 +14,7 @@ function Competence(description, image, effet, competences, prix){
 function competenceToHtml(competence)
 {
 	// TODO : Peut être donner un nom à la competence ??
-	var chaine ='<div class="competence" id="goatclickproducer">' + competence.Texte + '
-                    <br/>
-                    COST : <label id="goatclickproducer_cost"></label> ' + competence.Prix +' GOAT$$</div>';
+	var chaine ='<div class="competence" id="goatclickproducer">' + competence.Texte + '<br/>COST : <label id="goatclickproducer_cost"></label> ' + competence.Prix +' GOAT$$</div>';
 
     return chaine;
 }
