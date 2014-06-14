@@ -1104,22 +1104,36 @@ footer {
     border-bottom: 1px solid #586165;
 }
 
+.competence[disabled="disabled"]
+{
+    border-bottom: 1px solid #808080; 
+    background-color: #808080;
+    min-height: 130px; 
+    padding: 10px;
+    cursor: pointer;
+}
+
 .competence
 {
     border-bottom: 1px solid #808080; 
-    height: 90px; 
+    min-height: 130px; 
     padding: 10px;
-    cursor: hand;
+    cursor: pointer;
 }
 
 .competence:hover
 {
-    cursor: hand;
+    cursor: pointer;
 }
 
 .plusone
 {
    position:absolute;
    top:60px;
-   font-size:18px;
+   font-size:30px;
+}
+
+.centrer
+{
+    text-align:center;
 }

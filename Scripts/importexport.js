@@ -31,5 +31,5 @@ function getSauvegardeObject()
 	var beginnerStore = generateBeginnerStore();
 	var chaineNiveauStore;
 
-	return { "nbClick" : "0", "niveauStore1" : "0", "niveauStore2" : "0" ,"niveauStore3" : "0" ,"niveauStore4" : "0", "production" : "0"};
+	return { "nbClick" : 0, "goats" : 0.0, "niveauStore1" : 0, "niveauStore2" : 0 ,"niveauStore3" : 0 ,"niveauStore4" : 0, "productionManuelle" : 1,	"productionAutomatique" : 0};
 }
