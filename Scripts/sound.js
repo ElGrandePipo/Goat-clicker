@@ -23,6 +23,7 @@ function endsWith(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 
+// Code inspiré des doge js qui trainent sur le net
 function generationCssSound()
 {
     // Get random positions
