@@ -72,9 +72,42 @@ function FirstMagasin(){
     this.Competences.push(
         new Competence("qualite",
             "image",
-            new Effet(EVariableEffet.qualiteLait,
+            new Effet(EVariableEffet.freqAutoClic,
                 new Modificateur(EModificateur.fois, 1.1)),
             sousComps1,
+            200)
+    );
+
+    // arbre automatic clic
+    var c3 = new Competence("Trayeuse de compétition",
+        "Best in the business",
+        new Effet(EVariableEffet.freqAutoClic,
+            new Modificateur(EModificateur.fois, 1.3)),
+        [],
+        10000
+    );
+    var s2 = [];
+    s2.push(c3);
+
+    var c2 = new Competence("Trayeuse automatique moyen de gamme",
+        "Still not as fast as wished ?",
+        "image",
+        new Effet(EVariableEffet.freqAutoClic,
+            new Modificateur(EModificateur.fois, 1.2)),
+        s2,
+        1000
+    );
+
+    var s1= [];
+    s1.push(c2);
+
+    this.Competences.push(
+        new Competence("Trayeuse automatique de base",
+            "Sick having dirty hands ? Try this!",
+            "image",
+            new Effet(EVariableEffet.qualiteLait,
+                new Modificateur(EModificateur.fois, 1.1)),
+            s1,
             200)
     );
 

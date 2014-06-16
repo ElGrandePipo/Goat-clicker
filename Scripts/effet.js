@@ -1,7 +1,7 @@
 /**
  * Created by Damien on 6/10/14.
  */
-var EVariableEffet = {"qualiteLait":1, "ratioProductionLait":2, "espaceConsomme":3, "niveauCommercant":4};
+var EVariableEffet = {"qualiteLait":1, "ratioProductionLait":2, "espaceConsomme":3, "niveauCommercant":4, "freqAutoClic":5};
 Object.freeze(EVariableEffet);
 
 function Effet(enumEffet, modificateur){

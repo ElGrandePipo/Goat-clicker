@@ -11,6 +11,9 @@ function Player(){
 
     this.CommercantLevel = 0;
 
+    // nombre de clics automatique (par sec)
+    this.FrequenceAutomaticClic = 0;
+
     // en nombre de chèvres
     this.EspaceDisponible = 4;
 
