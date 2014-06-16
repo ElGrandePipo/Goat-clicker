@@ -16,6 +16,8 @@
             var goatclickproducer_cost = $("#goatclickproducer_cost");
            
             var btnSave = $("#btnSave");
+            var btnImport = $("#btnImport");
+            var btnExport = $("#btnExport");
             //----------------------------------------------------------
 
             if (retrievedObject != null) {
@@ -154,7 +156,7 @@
 
             btnSave.click(function() {
                 setSauvegarde(retrievedObject);
-                alert('Sauvegarde effectuée');
+                alert('Save done');
             });
 
             mainGoat.click(function () {
@@ -204,5 +206,18 @@
                 lblGoats.text('0');
                 retrievedObject = getSauvegardeObject();
                 checkCompetences();
+            });
+
+            btnExport.click(function(){
+                var chaineBase64 = Base64.encode(JSON.stringify(retrievedObject));
+                prompt("Please copy and save this string in order to use it later for import game:", chaineBase64);
+            });
+
+            btnImport.click(function()
+            {
+                var chaineBase64 = prompt("Please paste your string save in order to load a game. \n Be aware that an import will erase your current game...");
+                retrievedObject = JSON.parse(Base64.decode(chaineBase64));
+                setSauvegarde(retrievedObject);
+                location.reload();
             });
         });
