@@ -102,8 +102,8 @@ function FirstMagasin(){
     s1.push(c2);
 
     this.Competences.push(
-        new Competence("Trayeuse automatique de base",
-            "Sick having dirty hands ? Try this!",
+        new Competence("Traie manouelle",
+            "G.Lutins : si vous n'êtes pas allergique, main d'oeuvre trèèès bon marché qui traiera même vos chèvres",
             "image",
             new Effet(EVariableEffet.qualiteLait,
                 new Modificateur(EModificateur.fois, 1.1)),

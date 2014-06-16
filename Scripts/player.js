@@ -45,6 +45,7 @@ function Player(){
                 }
             }
 
+            // rafraichissement espace
             this.GoatSpace = this.GetGoatSpace();
         }
 
@@ -60,6 +61,17 @@ function Player(){
                 }
             }
         }
+
+        if (competence.Effet.Effet == EVariableEffet.freqAutoClic){
+            if (competence.Effet.Modificateur.Modif == EModificateur.fois){
+                this.FrequenceAutomaticClic *= competence.Effet.Modificateur.Valeur;
+            }
+
+            if (competence.Effet.Modificateur.Modif == EModificateur.plus){
+                this.FrequenceAutomaticClic += competence.Effet.Modificateur.Valeur;
+            }
+        }
+
 
         if (competence.Effet.Effet == EVariableEffet.niveauCommercant){
 
