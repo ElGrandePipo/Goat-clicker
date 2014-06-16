@@ -1,0 +1,205 @@
+   $(function () {
+
+            var chaineSave = getSauvegarde();
+            var retrievedObject = JSON.parse(chaineSave);
+            var sysinfos = new SysInfos();
+
+            var interval;
+
+            var nbClick = 0;
+            var production_manuelle = 1;
+            var production_automatique = 0;
+
+            //----------------------------------------------------------
+            var mainGoat = $("#mainGoat");
+            var lblGoats = $("#lblGoats");
+            var goatclickproducer_cost = $("#goatclickproducer_cost");
+           
+            var btnSave = $("#btnSave");
+            //----------------------------------------------------------
+
+            if (retrievedObject != null) {
+
+                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+                nbClick = retrievedObject.nbClick;
+                production_manuelle = retrievedObject.productionManuelle;
+                production_automatique = retrievedObject.productionAutomatique;
+            }
+            else
+            {
+                retrievedObject = getSauvegardeObject();
+                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " ")); 
+            }
+
+            function checkCompetences()
+            {
+                var competences = $(".competence");
+                
+                // parcourir les div compétences. Pour chaque, vérifier le prix, si argent dispo alors on permet l'achat
+                for (var i = 0; i < competences.length; i++) {
+                    var position = competences[i].getAttribute("position")
+                    if(sysinfos.Magasins.Competences[position].Prix <= retrievedObject.goats)
+                    {
+                        competences[i].removeAttribute('disabled');
+                    }
+                    else
+                    {
+                        competences[i].setAttribute('disabled', 'disabled');
+                    }
+                };
+            }  
+
+            checkCompetences();
+
+            /*
+            BLOC TEST DAMIEN
+            *
+             */
+            var si = new SysInfos();
+
+            //  var banque = si.Banque;
+            // var Magasin = si.Magasins
+            // var Player = si.Player
+
+            // on click goat
+            //qté production lait :
+            var qteLaitProduiteOnClick = si.Banque.GenererProduction(si.Player);
+            // et donc si stockage :
+            si.Player.LaitAccumule += si.Banque.GenererProduction(si.Player);
+            // or
+            si.GenererProductionClic();
+            // TODO : faire chainons manquants pour rattrapage lors chargement sauvegarde
+            // si.ApplyAutoClics();
+
+            // génération revenu (si pas stockage, actions liées):
+            var revenuOnClick = si.Banque.GenererRevenu(si.Player);
+
+            // génération de click auto
+            // (si.Player.FrequenceAutomaticClic * secondes) * Si.GenererProduction();
+            // comme objets "internes" au si =>
+
+            // achat goat => plus de production
+            // TODO : ajouter goats aux magasins
+          //  var goatAchetee;
+          //  var priceAchat;
+          //  if (si.Player.CanBuyGoat(goatAchetee, priceAchat)){
+          //      si.Player.BuyGoat(goatAchetee, priceAchat);
+          //  }
+            //influera production future
+
+
+
+            /*
+                       FIN BLOC
+                        */
+
+
+           
+            interval = setInterval(function() 
+            { 
+                retrievedObject.goats+= production_automatique; 
+                setSauvegarde(retrievedObject);
+                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " ")); 
+                checkCompetences();
+            }, 1000);           
+
+            for (var i = 0; i < sysinfos.Magasins.Competences.length; i++) {
+                var blocHtml = competenceToHtml(sysinfos.Magasins.Competences[i], i);
+
+                $("#beginnerStore").append(blocHtml);
+            }            
+
+            $(".competence").click(function() {
+                var possibiliteAchat = $(this).attr('disabled');
+
+                if(possibiliteAchat == undefined)
+                {
+                    var position = $(this).attr('position');
+                    var price = sysinfos.Magasins.Competences[position].Prix;
+                    
+                    var gain = sysinfos.Magasins.Competences[position].Gain;
+
+                    retrievedObject.goats-=  Math.floor(price);  
+                    
+                    if(sysinfos.Magasins.Competences[position].GainManuel)
+                    {
+                        production_manuelle+= gain;
+                    }
+                    else
+                    {
+                        production_automatique+= gain;
+                    }
+
+                    sysinfos.Magasins.Competences[position].LevelStore++;
+                    var niveau = sysinfos.Magasins.Competences[position].LevelStore;
+
+                    retrievedObject.productionAutomatique = production_automatique;
+                    retrievedObject.productionManuelle = production_manuelle;
+
+
+                    // Calcul du prochain prix par rapport au niveau (trop linéaire pour le moment)
+                    sysinfos.Magasins.Competences[position].Prix = Math.floor((sysinfos.Magasins.Competences[position].Prix * (niveau + 1)) + ((position * 20) * niveau));
+                    sysinfos.Magasins.Competences[position].Gain = Math.floor((sysinfos.Magasins.Competences[position].Gain * (niveau + 1)) + ((position * 20) * niveau));
+
+                    $("#goat" + position + "_cost").text(sysinfos.Magasins.Competences[position].Prix);
+                    $("#goat" + position + "_gain").text(sysinfos.Magasins.Competences[position].Gain);
+
+                    //lblGoats.text(retrievedObject.goats);
+
+                    setSauvegarde(retrievedObject);
+
+                    checkCompetences();
+                }               
+            });
+
+            btnSave.click(function() {
+                setSauvegarde(retrievedObject);
+                alert('Sauvegarde effectuée');
+            });
+
+            mainGoat.click(function () {
+                startSound("Sounds/chevre1-3.mp3");
+                mainGoat.animate({
+                    height : "-=20",
+                    width : "-=20"
+                }, 100);
+
+                mainGoat.animate({
+                    height : "+=20",
+                    width : "+=20"
+                }, 100);  
+
+                retrievedObject.goats+= Math.floor(production_manuelle);
+
+                retrievedObject.goats = Math.floor(retrievedObject.goats);
+                nbClick++;
+                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+                               
+                retrievedObject.nbClick = nbClick;
+
+                setSauvegarde(retrievedObject);
+
+                var label = $("<label>").attr('id', "lblplus");
+                label.attr('class', 'plusone');
+
+                label.insertAfter('#scoringclick');
+                label.text("+" + production_manuelle);
+                label.animate({
+                    opacity: 0,
+                    top: "-=30"
+                }, "slow", function () {
+                    label.remove();
+                });  
+
+                checkCompetences();            
+            });
+
+            $("#btnReinit").click(function () {
+                clearInterval(interval);
+                supprimerSauvegarde();
+                nbClick = 0;
+                lblGoats.text('0');
+                retrievedObject = getSauvegardeObject();
+                checkCompetences();
+            });
+        });
