@@ -162,12 +162,15 @@
                 mainGoat.animate({
                     height : "-=20",
                     width : "-=20"
-                }, 100);
+                }, 50, function()
+                        {
+                             mainGoat.animate({
+                            height : "+=20",
+                            width : "+=20"
+                        }, 50);  
+                });
 
-                mainGoat.animate({
-                    height : "+=20",
-                    width : "+=20"
-                }, 100);  
+               
 
                 retrievedObject.goats+= Math.floor(production_manuelle);
 
