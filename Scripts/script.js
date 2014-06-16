@@ -20,7 +20,7 @@
 
             if (retrievedObject != null) {
 
-                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+                lblGoats.text(retrievedObject.goats.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
                 nbClick = retrievedObject.nbClick;
                 production_manuelle = retrievedObject.productionManuelle;
                 production_automatique = retrievedObject.productionAutomatique;
@@ -28,7 +28,7 @@
             else
             {
                 retrievedObject = getSauvegardeObject();
-                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " ")); 
+                lblGoats.text(retrievedObject.goats.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")); 
             }
 
             function checkCompetences()
@@ -99,7 +99,7 @@
             { 
                 retrievedObject.goats+= production_automatique; 
                 setSauvegarde(retrievedObject);
-                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " ")); 
+                lblGoats.text(retrievedObject.goats.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")); 
                 checkCompetences();
             }, 1000);           
 
@@ -173,7 +173,7 @@
 
                 retrievedObject.goats = Math.floor(retrievedObject.goats);
                 nbClick++;
-                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+                lblGoats.text(retrievedObject.goats.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
                                
                 retrievedObject.nbClick = nbClick;
 
