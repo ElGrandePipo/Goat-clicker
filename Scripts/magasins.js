@@ -16,10 +16,11 @@ function MagasinNeutre(){
 
     // pour test
     this.Competences = [];
-    this.Competences.push(new CompetenceBeginner("Automatic click", "This will help you to increase your click productivity.", "Content/img/store/hand.png", 10, 1, 0, true));
+    this.Competences.push(new CompetenceBeginner("Goat click", "This will help you to increase your click productivity.", "Content/img/store/hand.png", 10, 1, 0, true));
     this.Competences.push(new CompetenceBeginner("Goat Queen", "No more click again ! Thanks to this beautiful queen, no need to click again.", "Content/img/store/goat-queen.jpg", 100, 5, 0, false));
     this.Competences.push(new CompetenceBeginner("Lannister Goat", "A Lannister Goat always produce goat.", "Content/img/store/lannister-goat.jpg", 1000, 100, 0, false));
-    this.Competences.push(new CompetenceBeginner("Viagra Goat", "If you're under age do not click here ! (Increase productivity and goat coït)", "Content/img/store/viagra-goat.jpg", 5000, 1000, 0, false));
+    this.Competences.push(new CompetenceBeginner("Viagra Goat", "If you're under age do not click here ! (Increase productivity and goat coït)", "Content/img/store/viagra-goat.jpg", 50000, 10000, 0, false));
+    this.Competences.push(new CompetenceBeginner("Goat simulator", "Goats playing a goat increase goat productivity (inspired by The Sims)", "Content/img/store/goat-simulator.jpg", 5000000, 1000000, 0, false));
 
    /* this.Competences = [];
     this.Competences.push(

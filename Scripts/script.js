@@ -141,7 +141,7 @@
 
 
                     // Calcul du prochain prix par rapport au niveau (trop linéaire pour le moment)
-                    sysinfos.Magasins.Competences[position].Prix = Math.floor((sysinfos.Magasins.Competences[position].Prix * (niveau + 1)) + ((position * 20) * niveau));
+                    sysinfos.Magasins.Competences[position].Prix = Math.floor((sysinfos.Magasins.Competences[position].Prix * (niveau + 1)) + ((position * 40) * niveau));
                     sysinfos.Magasins.Competences[position].Gain = Math.floor((sysinfos.Magasins.Competences[position].Gain * (niveau + 1)) + ((position * 20) * niveau));
 
                     $("#goat" + position + "_cost").text(sysinfos.Magasins.Competences[position].Prix);
@@ -183,7 +183,7 @@
                 lblGoats.text(retrievedObject.goats.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
                                
                 retrievedObject.nbClick = nbClick;
-                
+
                 setSauvegarde(retrievedObject);
 
                 var label = $("<label>").attr('id', "lblplus");
