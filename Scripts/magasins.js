@@ -41,6 +41,54 @@ function MagasinNeutre(){
     );*/
 }
 
+// magasin doit vendre des goats (1 goat de + = plus de lait consommé).
+function FirstMagasin(){
+    this.Magasin = new Magasin(premierMagasin);
+
+    this.Competences = new Array();
+
+    // arbre "qualiteLait"
+    var compLevel3 = new Competence("level 3",
+                            "",
+                            new Effet(EVariableEffet.qualiteLait,
+                            new Modificateur(EModificateur.fois, 1.3)),
+                            [],
+                            1000
+                            );
+    var sousComps2 = [];
+    sousComps2.push(compLevel3);
+
+    var compLevel2 = new Competence("level 2",
+                            "",
+                            new Effet(EVariableEffet.qualiteLait,
+                                new Modificateur(EModificateur.fois, 1.2)),
+                            sousComps2,
+                            1000
+                        );
+
+    var sousComps1 = [];
+    sousComps1.push(compLevel2);
+
+    this.Competences.push(
+        new Competence("qualite",
+            "image",
+            new Effet(EVariableEffet.qualiteLait,
+                new Modificateur(EModificateur.fois, 1.1)),
+            sousComps1,
+            200)
+    );
+
+    // arbre espace
+    this.Competences.push(
+        new Competence("espace",
+            "image",
+            new Effet(EVariableEffet.espaceConsomme,
+                new Modificateur(EModificateur.plus, 4)),
+            [],
+            200)
+    );
+}
+
 function MagasinDemonique(){
     this.Magasin = new Magasin("Magasin démoniaque");
 }

@@ -164,6 +164,42 @@
             }  
 
             checkCompetences();
+
+            /*
+            BLOC TEST DAMIEN
+            *
+             */
+            var si = new SysInfos();
+
+            //  var banque = si.Banque;
+            // var Magasin = si.Magasins
+            // var Player = si.Player
+
+            // on click goat
+            //qté production lait :
+            var qteLaitProduiteOnClick = si.Banque.GenererProduction(si.Player);
+            // et donc si stockage :
+            si.Player.LaitAccumule += si.Banque.GenererProduction(si.Player);
+
+            // génération revenu (si pas stockage, actions liées):
+            var revenuOnClick = si.Banque.GenererRevenu(si.Player);
+
+            // achat goat => plus de production
+            // TODO : ajouter goats aux magasins
+          //  var goatAchetee;
+          //  var priceAchat;
+          //  if (si.Player.CanBuyGoat(goatAchetee, priceAchat)){
+          //      si.Player.BuyGoat(goatAchetee, priceAchat);
+          //  }
+            //influera production future
+
+
+
+            /*
+                       FIN BLOC
+                        */
+
+
            
             interval = setInterval(function() 
             { 

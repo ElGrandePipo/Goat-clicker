@@ -23,6 +23,10 @@ function Player(){
         this.LaitAccumule = 0;
     }
 
+    this.CanBuyCompetence = function(competence){
+        return this.SommeDisponible >= competence.Prix;
+    }
+
     this.AcheterCompetence = function(competence){
         this.SommeDisponible -= competence.Prix;
 
@@ -73,8 +77,13 @@ function Player(){
     }
     this.GoatSpace = this.GetGoatSpace();
 
-    this.CanBuyGoat= function(goat){
-        return (goat.espaceConsomme + this.GetGoatSpace()) < this.EspaceDisponible;
+    this.CanBuyGoat= function(goat, price){
+        return (goat.espaceConsomme + this.GetGoatSpace()) < this.EspaceDisponible && this.SommeDisponible >= price;
+    }
+
+    this.BuyGoat = function(goat, price){
+        this.SommeDisponible -= price;
+        this.goats.push(goat);
     }
 
     this.Personality = new PluriMoralities();
