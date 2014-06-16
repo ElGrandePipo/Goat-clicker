@@ -26,6 +26,7 @@
                 nbClick = retrievedObject.nbClick;
                 production_manuelle = retrievedObject.productionManuelle;
                 production_automatique = retrievedObject.productionAutomatique;
+                sysinfos.Magasins = retrievedObject.magasin;
             }
             else
             {
@@ -147,7 +148,7 @@
                     $("#goat" + position + "_gain").text(sysinfos.Magasins.Competences[position].Gain);
 
                     //lblGoats.text(retrievedObject.goats);
-
+                    retrievedObject.magasin = sysinfos.Magasins;
                     setSauvegarde(retrievedObject);
 
                     checkCompetences();
@@ -155,6 +156,7 @@
             });
 
             btnSave.click(function() {
+                retrievedObject.magasin = sysinfos.Magasins;
                 setSauvegarde(retrievedObject);
                 alert('Save done');
             });
@@ -181,7 +183,7 @@
                 lblGoats.text(retrievedObject.goats.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
                                
                 retrievedObject.nbClick = nbClick;
-
+                
                 setSauvegarde(retrievedObject);
 
                 var label = $("<label>").attr('id', "lblplus");
