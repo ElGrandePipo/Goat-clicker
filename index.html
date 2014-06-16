@@ -39,7 +39,7 @@
                     <h2 class="standard-block">LET'S GOAT SOME GOATS</h2>
                 </div>
                 <div class="col-md-5 centrer">
-                    <p class="standard-block">GOAT$$ : <label id="lblNbClick"></label></p>
+                    <p class="standard-block">GOAT$$ : <label id="lblGoats"></label></p>
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
 
             //----------------------------------------------------------
             var mainGoat = $("#mainGoat");
-            var lblNbClick = $("#lblNbClick");
+            var lblGoats = $("#lblGoats");
             var goatclickproducer_cost = $("#goatclickproducer_cost");
            
             var btnSave = $("#btnSave");
@@ -134,7 +134,7 @@
 
             if (retrievedObject != null) {
 
-                lblNbClick.text(retrievedObject.goats);
+                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " "));
                 nbClick = retrievedObject.nbClick;
                 production_manuelle = retrievedObject.productionManuelle;
                 production_automatique = retrievedObject.productionAutomatique;
@@ -142,7 +142,7 @@
             else
             {
                 retrievedObject = getSauvegardeObject();
-                lblNbClick.text(retrievedObject.goats); 
+                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " ")); 
             }
 
             function checkCompetences()
@@ -213,7 +213,7 @@
             { 
                 retrievedObject.goats+= production_automatique; 
                 setSauvegarde(retrievedObject);
-                lblNbClick.text(retrievedObject.goats); 
+                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " ")); 
                 checkCompetences();
             }, 1000);           
 
@@ -258,7 +258,7 @@
                     $("#goat" + position + "_cost").text(sysinfos.Magasins.Competences[position].Prix);
                     $("#goat" + position + "_gain").text(sysinfos.Magasins.Competences[position].Gain);
 
-                    //lblNbClick.text(retrievedObject.goats);
+                    //lblGoats.text(retrievedObject.goats);
 
                     setSauvegarde(retrievedObject);
 
@@ -287,7 +287,7 @@
 
                 retrievedObject.goats = Math.floor(retrievedObject.goats);
                 nbClick++;
-                lblNbClick.text(retrievedObject.goats);
+                lblGoats.text(retrievedObject.goats.replace(/\B(?=(\d{3})+(?!\d))/g, " "));
                                
                 retrievedObject.nbClick = nbClick;
 
@@ -312,7 +312,7 @@
                 clearInterval(interval);
                 supprimerSauvegarde();
                 nbClick = 0;
-                lblNbClick.text('0');
+                lblGoats.text('0');
                 retrievedObject = getSauvegardeObject();
                 checkCompetences();
             });
