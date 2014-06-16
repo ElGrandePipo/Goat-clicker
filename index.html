@@ -180,9 +180,17 @@
             var qteLaitProduiteOnClick = si.Banque.GenererProduction(si.Player);
             // et donc si stockage :
             si.Player.LaitAccumule += si.Banque.GenererProduction(si.Player);
+            // or
+            si.GenererProductionClic();
+            // TODO : faire chainons manquants pour rattrapage lors chargement sauvegarde
+            // si.ApplyAutoClics();
 
             // génération revenu (si pas stockage, actions liées):
             var revenuOnClick = si.Banque.GenererRevenu(si.Player);
+
+            // génération de click auto
+            // (si.Player.FrequenceAutomaticClic * secondes) * Si.GenererProduction();
+            // comme objets "internes" au si =>
 
             // achat goat => plus de production
             // TODO : ajouter goats aux magasins
