@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<sounds>
+	<sound id="chevre1-1" label="Eeeh" src="chevre1-1.mp3" />
+	<sound id="chevre1-2" label="Eeeeeeeeh" src="chevre1-2.mp3" />
+	<sound id="chevre1-3" label="Eeaaaaah" src="chevre1-3.mp3" />
+	<sound id="chevre1-4" label="EEEEEEEEaaaaah" src="chevre1-4.mp3" />
+	<sound id="chevre2-1" label="Aaaaaaaaahhhhhhhhhouu" src="chevre2-1.mp3" />
+	<sound id="chevre3-1" label="Euuuuuaaaaeeuuuu" src="chevre3-1.mp3" />
+	<sound id="chevre3-2" label="Ahhhaaaaaaah" src="chevre3-2.mp3" />
+	<sound id="chevre4-1" label="Eeeeeeeeeeaaah" src="chevre4-1.mp3" />
+	<sound id="chevre4-2" label="Eeeeeeeeeeaaeeeh" src="chevre4-2.mp3" />
+	<sound id="chevre5-1" label="Huuuuuuuuuuuuurrrrr" src="chevre5-1.mp3" />
+	<sound id="chevre5-2" label="Huuuaaauuuuaaaauurrr" src="chevre5-2.mp3" />
+	<sound id="chevre6-1" label="Aaaaaahhhhhhhaaaaaaou !" src="chevre6-1.mp3" />
+	<sound id="chevre7-1" label="Oooohhhaaaaaaa !" src="chevre7-1.mp3" />
+	<sound id="chevre7-2" label="Oooohhhaaa" src="chevre7-2.mp3" />
+	<sound id="chevre7-3" label="Oha ?" src="chevre7-3.mp3" />
+	<sound id="chevre8-1" label="Yeeaaaaaaaaaaaahhh !" src="chevre8-1.mp3" />
+	<sound id="chevre9-1" label="Beeeeeeeeeeeehhhh" src="chevre9-1.mp3" />
+	<sound id="chevre10-1" label="AAAAARRRRRRR !!!!!" src="chevre10-1.mp3" />
+	<sound id="chevre11-1" label="Eeeeaaaaaaaaaaaaaah !" src="chevre11-1.mp3" />
+	<sound id="chevre11-2" label="Eeeaaeeeeaaaeaah !" src="chevre11-2.mp3" />
+</sounds>

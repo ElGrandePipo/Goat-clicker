@@ -162,7 +162,24 @@
             });
 
             mainGoat.click(function () {
-                startSound("Sounds/chevre1-3.mp3");
+
+                // gestion du son aléatoire
+                var son = sounds[Math.floor((Math.random() * (sounds.length - 1)) + 0)];
+                startSound("Sounds/" + son.src);
+                // affichage du son aléatoire
+                var id = Date.now();
+                var word = '<div id="goatWord'+id+'"><p>' + son.label + '</p></div>'; 
+                var style = generationCssSound();                
+
+                $("#goatPart").append(word);
+                var goatWord = $("#goatWord"+id);
+                goatWord.css(style);
+                goatWord.addClass('displayed-label-sound');
+                goatWord.fadeIn("slow").delay(500).fadeOut(300, function(){
+                    $(this).remove();
+                });
+
+
                 mainGoat.animate({
                     height : "-=20",
                     width : "-=20"

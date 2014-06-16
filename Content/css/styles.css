@@ -1147,3 +1147,16 @@ footer {
    -o-user-select: none;
    user-select: none;
 }
+
+.displayed-label-sound
+{
+    display: none;
+    position:fixed;
+    font-size:2em;
+    font-weight:bold;
+    font-family: Comic Sans MS;
+    z-index: 10001;
+    color:green;
+    text-transform: lowercase;
+    text-shadow: -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000;
+}

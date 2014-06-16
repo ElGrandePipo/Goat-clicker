@@ -1,6 +1,11 @@
+// CODE DE PAUL FOURNIER 
+
+var sounds = [];
+
  function startSound(src) {
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', src);
+    audioElement.volume = 0.2;
     audioElement.play();
 }
 
@@ -17,3 +22,53 @@ function Sound() {
 function endsWith(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
+
+function generationCssSound()
+{
+    // Get random positions
+    var imageGoat = $("#mainGoat");
+
+    var diffHeight = imageGoat.height() - imageGoat.position().top;
+    var diffWidth =  imageGoat.width() - imageGoat.position().left;
+
+    do { var h = Math.floor( Math.random() * $(window.top).height() - 100 ); } while (h <= diffHeight);
+    do { var w = Math.floor( Math.random() * $(window.top).width() - 250 ); } while (w < imageGoat.position.width && w > diffWidth);
+
+    // Generate Style
+    var style = { 
+        "top":  h,
+        "right": w
+    }
+
+    var orientation = Math.floor(( Math.random() * 71) - 35);
+
+    style["-webkit-transform"] = "rotate(" + orientation + "deg)";
+    style["-moz-transform"] = "rotate(" + orientation + "deg)";
+    style["-o-transform"] = "rotate(" + orientation + "deg)";
+    style["-webkit-transform"] = "rotate(" + orientation + "deg)";
+    style["writing-mode"] = "lr-tb";
+
+    return style;
+}
+
+$(function()
+{
+    $.ajax({
+        type: "GET",
+        url: "Sounds/sounds.xml",
+        dataType: "xml",
+        success: function(xml) { 
+            
+            // Chargement des sons
+            $(xml).find('sound').each( function() {
+                var sound = new Sound();
+                sound.id = $(this).attr('id');
+                sound.label = $(this).attr('label');
+                sound.src = $(this).attr('src');
+                sounds.push(sound);
+            });
+        }
+    });   
+});
+
+
