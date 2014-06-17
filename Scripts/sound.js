@@ -4,9 +4,15 @@ var sounds = [];
 
  function startSound(src) {
     var audioElement = document.createElement('audio');
+    var id = Date.now();
+    audioElement.setAttribute('id', 'sound' + id);
     audioElement.setAttribute('src', src);
     audioElement.volume = 0.2;
     audioElement.play();
+
+    $('#sound' + id).bind('ended', function() {
+        this.remove();
+    });
 }
 
 function Sound() {
