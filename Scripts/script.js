@@ -161,7 +161,7 @@
                 alert('Save done');
             });
 
-            mainGoat.click(function () {
+            mainGoat.click(function (e) {
 
                 // gestion du son aléatoire
                 var son = sounds[Math.floor((Math.random() * (sounds.length - 1)) + 0)];
@@ -205,12 +205,15 @@
 
                 var label = $("<label>").attr('id', "lblplus");
                 label.attr('class', 'plusone');
-
-                label.insertAfter('#scoringclick');
+               
                 label.text("+" + production_manuelle);
+                label.css({ 'top' : e.clientY -50, 'left' : e.clientX - 10});
+
+                $('body').append(label);
+
                 label.animate({
                     opacity: 0,
-                    top: "-=30"
+                    top: "-=50"
                 }, "slow", function () {
                     label.remove();
                 });  
