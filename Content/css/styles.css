@@ -1128,9 +1128,10 @@ footer {
 
 .plusone
 {
+   font-size:30px;
+   pointer-events: none;
    position:absolute;
    top:60px;
-   font-size:30px;
 }
 
 .centrer
@@ -1150,13 +1151,14 @@ footer {
 
 .displayed-label-sound
 {
+    color:green;
     display: none;
     position:fixed;
+    font-family: Comic Sans MS;
     font-size:2em;
     font-weight:bold;
-    font-family: Comic Sans MS;
     z-index: 10001;
-    color:green;
+    pointer-events: none;
     text-transform: lowercase;
     text-shadow: -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000;
 }
