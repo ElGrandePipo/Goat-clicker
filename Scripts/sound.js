@@ -35,16 +35,18 @@ function generationCssSound()
     // Get random positions
     var imageGoat = $("#mainGoat");
 
-    var diffHeight = imageGoat.height() - imageGoat.position().top;
-    var diffWidth =  imageGoat.width() - imageGoat.position().left;
+    // comment déterminer top : ne pas être entre top de l'image et top + height
 
-    do { var h = Math.floor( Math.random() * $(window.top).height() - 100 ); } while (h <= diffHeight);
-    do { var w = Math.floor( Math.random() * $(window.top).width() - 250 ); } while (w < imageGoat.position.width && w > diffWidth);
+    // comment déterminer left : ne doit pas être entre left de l'image et left + width
+
+    // Comment déterminer right
+    do { var h = Math.floor( Math.random() * $(window.top).height() - 100 ); } while (h >= imageGoat[0].y && h <= (imageGoat[0].y + imageGoat.height()));
+    do { var w = Math.floor( Math.random() * $(window.top).width() - 250 ); } while (w >= imageGoat[0].x && w <= (imageGoat[0].x + imageGoat.width()));
 
     // Generate Style
     var style = { 
         "top":  h,
-        "right": w
+        "left": w
     }
 
     var orientation = Math.floor(( Math.random() * 71) - 35);
