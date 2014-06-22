@@ -49,7 +49,7 @@ function FirstMagasin(){
     this.Competences = new Array();
 
     // arbre "qualiteLait"
-    var compLevel3 = new Competence("level 3",
+    var compLevel3 = new BruteSkill("level 3",
                             "",
                             new Effet(EVariableEffet.qualiteLait,
                             new Modificateur(EModificateur.fois, 1.3)),
@@ -59,7 +59,7 @@ function FirstMagasin(){
     var sousComps2 = [];
     sousComps2.push(compLevel3);
 
-    var compLevel2 = new Competence("level 2",
+    var compLevel2 = new BruteSkill("level 2",
                             "",
                             new Effet(EVariableEffet.qualiteLait,
                                 new Modificateur(EModificateur.fois, 1.2)),
@@ -71,7 +71,7 @@ function FirstMagasin(){
     sousComps1.push(compLevel2);
 
     this.Competences.push(
-        new Competence("qualite",
+        new BruteSkill("qualite",
             "image",
             new Effet(EVariableEffet.freqAutoClic,
                 new Modificateur(EModificateur.fois, 1.1)),
@@ -79,8 +79,9 @@ function FirstMagasin(){
             200)
     );
 
+    // faut utiliser une fabrique pour calculer les positions quand construction arbo
     // arbre automatic clic
-    var c3 = new Competence("Trayeuse de compétition",
+    var c3 = new BruteSkill("Trayeuse de compétition",
         "Best in the business",
         new Effet(EVariableEffet.freqAutoClic,
             new Modificateur(EModificateur.fois, 1.3)),
@@ -90,7 +91,7 @@ function FirstMagasin(){
     var s2 = [];
     s2.push(c3);
 
-    var c2 = new Competence("Trayeuse automatique moyen de gamme",
+    var c2 = new BruteSkill("Trayeuse automatique moyen de gamme",
         "Still not as fast as wished ?",
         "image",
         new Effet(EVariableEffet.freqAutoClic,
@@ -103,7 +104,7 @@ function FirstMagasin(){
     s1.push(c2);
 
     this.Competences.push(
-        new Competence("Traie manouelle",
+        new BruteSkill("Traie manouelle",
             "G.Lutins : si vous n'êtes pas allergique, main d'oeuvre trèèès bon marché qui traiera même vos chèvres",
             "image",
             new Effet(EVariableEffet.qualiteLait,
@@ -114,7 +115,7 @@ function FirstMagasin(){
 
     // arbre espace
     this.Competences.push(
-        new Competence("espace",
+        new BruteSkill("espace",
             "image",
             new Effet(EVariableEffet.espaceConsomme,
                 new Modificateur(EModificateur.plus, 4)),

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e8315f9-2dd2-4cfc-aaaf-0492112775bf" name="Default" comment="">
+      <change type="MOVED" beforePath="C:\Users\Damien\Documents\GitHub\Goat-clicker\Scripts\competence.js" afterPath="$PROJECT_DIR$/Scripts/skill.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/magasins.js" afterPath="$PROJECT_DIR$/Scripts/magasins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/player.js" afterPath="$PROJECT_DIR$/Scripts/player.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/si.js" afterPath="$PROJECT_DIR$/Scripts/si.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Goat-clicker.iws" />
@@ -29,67 +28,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="base64.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/base64.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="185" column="35" selection-start="7591" selection-end="7591" vertical-scroll-proportion="0.27076223" vertical-offset="2907" max-vertical-offset="5576">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1594" max-vertical-offset="2499">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/player.js">
+      <file leaf-file-name="begin.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/begin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="0" selection-start="2523" selection-end="2588" vertical-scroll-proportion="0.0" vertical-offset="625" max-vertical-offset="1887">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="banque.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/banque.js">
+      <file leaf-file-name="unslider.min.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/unslider.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="magasins.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/magasins.js">
+      <file leaf-file-name="sound.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/sound.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="6" selection-start="3484" selection-end="3484" vertical-scroll-proportion="0.0" vertical-offset="1147" max-vertical-offset="2261">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="moralite.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/moralite.js">
+      <file leaf-file-name="si.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/si.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+            <state line="14" column="28" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="competence.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/competence.js">
+      <file leaf-file-name="skill.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Scripts/skill.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="12" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+            <state line="35" column="20" selection-start="974" selection-end="974" vertical-scroll-proportion="0.66704035" vertical-offset="0" max-vertical-offset="1156">
               <folding>
-                <marker date="1402879039315" expanded="false" signature="1014:1025" placeholder="..." />
-                <marker date="1402879039315" expanded="false" signature="1152:1181" placeholder="..." />
+                <marker date="1403134214620" expanded="true" signature="1599:1610" placeholder="..." />
+                <marker date="1403134214620" expanded="true" signature="1737:1766" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="importexport.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/importexport.js">
+      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="9" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+            <state line="123" column="6" selection-start="3525" selection-end="3525" vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="4709">
               <folding />
             </state>
           </provider>
@@ -107,7 +106,7 @@
       <file leaf-file-name="effet.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/effet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="9" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+            <state line="6" column="9" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="408">
               <folding />
             </state>
           </provider>
@@ -135,12 +134,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Scripts/competence.js" />
         <option value="$PROJECT_DIR$/Scripts/effet.js" />
-        <option value="$PROJECT_DIR$/Scripts/magasins.js" />
         <option value="$PROJECT_DIR$/Scripts/player.js" />
         <option value="$PROJECT_DIR$/Scripts/si.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/Scripts/competence.js" />
+        <option value="$PROJECT_DIR$/Scripts/magasins.js" />
+        <option value="$PROJECT_DIR$/Scripts/listeOrdonnee.js" />
+        <option value="$PROJECT_DIR$/Scripts/skill.js" />
       </list>
     </option>
   </component>
@@ -177,7 +178,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,6 +212,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,11 +266,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -291,6 +292,79 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="0" selection-start="5291" selection-end="5291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2091">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="0" selection-start="2523" selection-end="2588" vertical-scroll-proportion="0.0" vertical-offset="625" max-vertical-offset="1887">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/banque.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/magasins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="6" selection-start="3484" selection-end="3484" vertical-scroll-proportion="0.0" vertical-offset="1147" max-vertical-offset="2261">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/moralite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/skill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="12" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="663">
+          <folding>
+            <marker date="1403134214620" expanded="true" signature="1599:1610" placeholder="..." />
+            <marker date="1403134214620" expanded="true" signature="1737:1766" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/importexport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/goat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/effet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="9" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1480" column="18" selection-start="26334" selection-end="26334" vertical-scroll-proportion="0.0" vertical-offset="23374" max-vertical-offset="37060">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="176" column="47" selection-start="7336" selection-end="7352" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="4828">
           <folding />
         </state>
@@ -310,12 +384,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/competence.js">
+    <entry file="file://$PROJECT_DIR$/Scripts/skill.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="629">
           <folding>
-            <marker date="1402879039315" expanded="false" signature="1014:1025" placeholder="..." />
-            <marker date="1402879039315" expanded="false" signature="1152:1181" placeholder="..." />
+            <marker date="1403134214620" expanded="true" signature="1599:1610" placeholder="..." />
+            <marker date="1403134214620" expanded="true" signature="1737:1766" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -341,13 +415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/moralite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/importexport.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="9" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
@@ -369,26 +436,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/competence.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding>
-            <marker date="1402879039315" expanded="false" signature="1014:1025" placeholder="..." />
-            <marker date="1402879039315" expanded="false" signature="1152:1181" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/effet.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="9" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/si.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="5" selection-start="857" selection-end="857" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
           <folding />
         </state>
       </provider>
@@ -400,17 +450,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/base64.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2499">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/begin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="905">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/unslider.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="892">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/sound.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/moralite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/si.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="28" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/magasins.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="6" selection-start="3484" selection-end="3484" vertical-scroll-proportion="0.0" vertical-offset="1147" max-vertical-offset="2261">
+        <state line="118" column="20" selection-start="4568" selection-end="4568" vertical-scroll-proportion="0.67600894" vertical-offset="1403" max-vertical-offset="2295">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="35" selection-start="7591" selection-end="7591" vertical-scroll-proportion="0.27076223" vertical-offset="2907" max-vertical-offset="5576">
+        <state line="117" column="0" selection-start="5286" selection-end="5286" vertical-scroll-proportion="-30.384615" vertical-offset="1199" max-vertical-offset="2091">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="6" selection-start="3525" selection-end="3525" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="4709">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/skill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="20" selection-start="974" selection-end="974" vertical-scroll-proportion="0.66704035" vertical-offset="0" max-vertical-offset="1156">
+          <folding>
+            <marker date="1403134214620" expanded="true" signature="1599:1610" placeholder="..." />
+            <marker date="1403134214620" expanded="true" signature="1737:1766" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
