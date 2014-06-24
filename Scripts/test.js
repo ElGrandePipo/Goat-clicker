@@ -15,7 +15,14 @@ function TBruteSkill(nom, description, image, effet, sousCompetencesBrutes, prix
     self.Illustration = image;
     self.Effect = effet;
     self.RelatedSkills = sousCompetencesBrutes;
-    self.Price = prix;
+    self.Price = ko.observable(prix);
+
+    this.GainLevel = function(){
+        var self = this;
+
+        // read into write
+        self.Price(self.Price() *2);
+    }
 }
 
 function TreeSkillVm(){

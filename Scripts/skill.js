@@ -8,16 +8,7 @@ function Position(x, y){
     this.Y = y;
 }
 
-// les compétences contiennent des souscompetences
-// pour l'instant pas introduit mais niveau de compétences avec image et description etc associés.
-function Skill(nom, competenceBrute, sousCompetences,  position, visible){
-    this.BruteSkill = competenceBrute;
-    this.RelativeSkills = sousCompetences;
-    this.Position = position;
-    this.Html = "<div";
-    this.Visible = visible;
-}
-
+// without any logic above being a skill
 function BruteSkill(nom, description, image, effet, sousCompetencesBrutes, prix){
     this.Nom = nom;
     this.Texte = description;
@@ -25,20 +16,9 @@ function BruteSkill(nom, description, image, effet, sousCompetencesBrutes, prix)
     this.Effet = effet;
     this.SousCompetences = sousCompetencesBrutes;
     this.Prix = prix;
+
 }
 
-function FabricSkill(){
-    this.GetSkillFromBruteSkill = function(bruteSkill){
-        var skill;
-        var tempBruteSkill = bruteSkill;
-
-        while (bruteSkill.SousCompetences.length != 0){
-            // todo 
-        }
-
-        return skill;
-    }
-}
 
 
 function CompetenceBeginner(nom, description, image, prix, gain, levelstore, gainManuel)
@@ -60,3 +40,4 @@ function competenceToHtml(competence, position)
 
     return chaine;
 }
+

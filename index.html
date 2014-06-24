@@ -69,6 +69,37 @@
                     <h2 class="standard-block">GOATS STORE</h2>
                 </div>
             </div>
+            <div class="col-md-5" id="otherStore" style="border-left : 1px solid #c2c2c2;border-right : 1px solid #c2c2c2;">
+                <div class="h2-wrap centrer">
+                    <h2 class="standard-block">GOATS STORE</h2>
+                    <ul data-bind="foreach: RelatedSkills">
+                        <li>
+                            <p data-bind="text: Name"></p>
+                            <p data-bind="text: Description"></p>
+                            <p data-bind="text: Price"></p>
+                            <ul data-bind="foreach: $data.RelatedSkills" >
+                                <li>
+                                    <p data-bind="text: Name, click: $data.GainLevel();"></p>
+                                    <p data-bind="text: Description"></p>
+                                    <p data-bind="text: Price"></p>
+                                    <!-- trollolo -->
+                                    <ul data-bind="foreach: $data.RelatedSkills">
+                                        <li>
+                                            <ul data-bind="foreach: $data.RelatedSkills">
+                                                <li>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--ul data-bind="foreach: RelatedSkills">
+                            <li></li>
+                        </ul-->
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -113,5 +144,8 @@
     <script type="text/javascript" src="Scripts/importexport.js"></script>
     <script type="text/javascript" src="Scripts/base64.js"></script>
     <script type="text/javascript" src="Scripts/script.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/knockout.min.js"></script>
+    <script type="text/javascript" src="Scripts/test.js"></script>
 </body>
 </html>
