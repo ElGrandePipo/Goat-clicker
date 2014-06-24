@@ -54,7 +54,7 @@
     </div>
     <div class="container noselect">
         <div class="row">
-            <div class="col-md-7 carousel" id="goatPart">
+            <div class="col-md-7 carousel" id="goatPart" data-bind="click: $root.ClickMainGoat();">
                 <img src="Content/img/maingoat.jpg" style="width: 300px;" id="mainGoat" alt="main goat" />
                 <p id="scoringclick"></p>
                 <br />                
@@ -76,11 +76,13 @@
                     <p data-bind="text: Player().SommeDisponible()"></p>
                     <ul data-bind="foreach: DemonicStore().RelatedSkills()">
                         <li>
+                            <img data-bind="attr: { src: Illustration }" style="width : 50px;" />
                             <p data-bind="text: Name"></p>
                             <p data-bind="text: Description"></p>
                             <p data-bind="text: Price"></p>
                             <ul data-bind="foreach: $data.RelatedSkills()" >
                                 <li>
+                                    <img data-bind="attr: { src: Illustration }" style="width : 50px;" />
                                     <p data-bind="text: Name, click: $root.SkillBought($data);"></p>
                                     <p data-bind="text: Description"></p>
                                     <p data-bind="text: Price"></p>

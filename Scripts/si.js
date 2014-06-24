@@ -36,6 +36,10 @@ function SysInfos(){
         skill.GainLevel();
     }
 
+    this.ClickMainGoat = function(){
+        this.Player().SommeDisponible(this.Player().SommeDisponible() + 20);
+    }
+
     this.Test = function(){
         alert("à malibouuuuu");
     }

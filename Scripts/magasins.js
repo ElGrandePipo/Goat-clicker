@@ -138,27 +138,27 @@ function DemonicStore(){
                 "pocket-hatchet (yes you have one) and killed the foolish goat. Possessed, your fury could not end before sackaging half of" +
                 "your goat cheptel." +
                 "Oh, and for the bonus, the remaining goats are harder, better, faster, stronger, and you can sacrifice some to apply additional bonuses.",
-            "...jpg",
+            "Content/img/store/goat-queen.jpg",
             EVariableEffet.niveauCommercant,
             ko.observableArray([
                 new TBruteSkill(
                     "S",
                     "",
-                    "...jpg",
+                    "Content/img/store/lannister-goat.jpg",
                     EVariableEffet.espaceConsomme,
                     [],
                     10
                 ),new TBruteSkill(
                     "D",
                     "",
-                    "...jpg",
+                    "Content/img/store/goat-queen.jpg",
                     EVariableEffet.espaceConsomme,
                     [],
                     10),
                 new TBruteSkill(
                     "M",
                     "",
-                    "...jpg",
+                    "Content/img/store/lannister-goat.jpg",
                     EVariableEffet.espaceConsomme,
                     [],
                     10
