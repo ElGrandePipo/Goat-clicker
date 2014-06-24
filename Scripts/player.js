@@ -19,29 +19,31 @@ function Player(){
 
     // litres // stockage ?
     this.LaitAccumule = 0;
-    this.SommeDisponible = 0;
+    this.SommeDisponible = ko.observable(500);
 
     this.VendreLait = function(banque){
-        this.SommeDisponible += banque.GenererRevenu(this);
+        this.SommeDisponible(SommeDisponible() + banque.GenererRevenu(this));
         this.LaitAccumule = 0;
     }
 
-    this.CanBuyCompetence = function(competence){
-        return this.SommeDisponible >= competence.Prix;
+    this.CanBuySkill = function(skill){
+        return this.SommeDisponible() >= skill.Prix;
     }
 
-    this.AcheterCompetence = function(competence){
-        this.SommeDisponible -= competence.Prix;
+    this.BuySkill = function(skill){
+        var reste = this.SommeDisponible() - skill.Price();
+        this.SommeDisponible(reste);
 
-        if (competence.Effet.Effet == EVariableEffet.espaceConsomme){
+        /*
+        if (skill.Effet.Effet == EVariableEffet.espaceConsomme){
             for (var i = 0; i < this.goats.length; i++){
                 // déplacer la mécanique de calcul mais flemme
-                if (competence.Effet.Modificateur.Modif == EModificateur.fois){
-                    this.goats[i].espaceConsomme *= competence.Effet.Modificateur.Valeur;
+                if (skill.Effet.Modificateur.Modif == EModificateur.fois){
+                    this.goats[i].espaceConsomme *= skill.Effet.Modificateur.Valeur;
                 }
 
-                if (competence.Effet.Modificateur.Modif == EModificateur.plus){
-                    this.goats[i].espaceConsomme += competence.Effet.Modificateur.Valeur;
+                if (skill.Effet.Modificateur.Modif == EModificateur.plus){
+                    this.goats[i].espaceConsomme += skill.Effet.Modificateur.Valeur;
                 }
             }
 
@@ -49,37 +51,37 @@ function Player(){
             this.GoatSpace = this.GetGoatSpace();
         }
 
-        if (competence.Effet.Effet == EVariableEffet.qualiteLait){
+        if (skill.Effet.Effet == EVariableEffet.qualiteLait){
             for (var i = 0; i < this.goats.length; i++){
                 // déplacer la mécanique de calcul mais flemme
-                if (competence.Effet.Modificateur.Modif == EModificateur.fois){
-                    this.goats[i].qualiteLait *= competence.Effet.Modificateur.Valeur;
+                if (skill.Effet.Modificateur.Modif == EModificateur.fois){
+                    this.goats[i].qualiteLait *= skill.Effet.Modificateur.Valeur;
                 }
 
-                if (competence.Effet.Modificateur.Modif == EModificateur.plus){
-                    this.goats[i].qualiteLait += competence.Effet.Modificateur.Valeur;
+                if (skill.Effet.Modificateur.Modif == EModificateur.plus){
+                    this.goats[i].qualiteLait += skill.Effet.Modificateur.Valeur;
                 }
             }
         }
 
-        if (competence.Effet.Effet == EVariableEffet.freqAutoClic){
-            if (competence.Effet.Modificateur.Modif == EModificateur.fois){
-                this.FrequenceAutomaticClic *= competence.Effet.Modificateur.Valeur;
+        if (skill.Effet.Effet == EVariableEffet.freqAutoClic){
+            if (skill.Effet.Modificateur.Modif == EModificateur.fois){
+                this.FrequenceAutomaticClic *= skill.Effet.Modificateur.Valeur;
             }
 
-            if (competence.Effet.Modificateur.Modif == EModificateur.plus){
-                this.FrequenceAutomaticClic += competence.Effet.Modificateur.Valeur;
+            if (skill.Effet.Modificateur.Modif == EModificateur.plus){
+                this.FrequenceAutomaticClic += skill.Effet.Modificateur.Valeur;
             }
         }
 
 
-        if (competence.Effet.Effet == EVariableEffet.niveauCommercant){
+        if (skill.Effet.Effet == EVariableEffet.niveauCommercant){
 
         }
 
-        if (competence.Effet.Effet == EVariableEffet.ratioProductionLait){
+        if (skill.Effet.Effet == EVariableEffet.ratioProductionLait){
 
-        }
+        }*/
     }
 
     this.GetGoatSpace= function(){

@@ -1,19 +1,14 @@
-// les compétences contiennent des souscompetences
-// pour l'instant pas introduit mais niveau de compétences avec image et description etc associés.
-function TSkill(nom, competenceBrute, sousCompetences,  position, visible){
-    this.BruteSkill = competenceBrute;
-    this.RelativeSkills = sousCompetences;
-    this.Position = position;
-    this.Html = "<div";
-    this.Visible = visible;
-}
-
-function TBruteSkill(nom, description, image, effet, sousCompetencesBrutes, prix){
+/*
+*  Skill: in work, should have one negative effect (buying it in some way) and a positive one (increase whatever)
+* */
+function TBruteSkill(nom, description, image, effect, sousCompetencesBrutes, prix){
     var self = this;
-    self.Name = nom;
-    self.Description = description;
-    self.Illustration = image;
-    self.Effect = effet;
+    self.Name = ko.observable(nom);
+
+    // even though it's not relevant :p
+    self.Description = ko.observable(description);
+    self.Illustration = ko.observable(image);
+    self.Effect = ko.observable(effect);
     self.RelatedSkills = sousCompetencesBrutes;
     self.Price = ko.observable(prix);
 
@@ -113,35 +108,3 @@ function TreeSkillVm(){
         )
     ]);
 }
-
-
-function BasicSkill(name, price, skills){
-    var self = this;
-
-    self.Name = name;
-    self.Price = price;
-    self.Skills = skills;
-}
-
-function BasicTreeSkill(){
-    var self = this;
-
-    var array = [];
-
-    var bun = new BasicSkill("a","un");
-    var bdeux = new BasicSkill("b","deux");
-
-
-    array.push(bun);
-    array.push(bdeux);
-
-    self.Skills = ko.observableArray([
-        //array
-        //new BasicSkill("a","un", ko.observableArray([ { Name: "aa", Price: "100" } , { Name: "ab", Price: "100" }])),
-        //new BasicSkill("b","deux", ko.observableArray([ { Name: "ba", Price: "100" } , { Name: "bb", Price: "100" }]))
-        new BasicSkill("a","un", ko.observableArray([ new BasicSkill("aa", "100"), new BasicSkill("ab", "100")])),
-        new BasicSkill("b","deux", ko.observableArray([ new BasicSkill("ba", "100"), new BasicSkill("bb", "100")]))
-    ])
-}
-
-ko.applyBindings(new TreeSkillVm());

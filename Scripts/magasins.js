@@ -2,8 +2,10 @@
  * Created by Damien on 6/10/14.
  */
 // magasin générique avec les fonctions de magasins
-function Magasin(texte){
-    this.Texte = texte;
+function Store(texte){
+    var self = this;
+
+    self.Texte = ko.observable(texte);
 }
 
 
@@ -12,7 +14,7 @@ function Magasin(texte){
 // ou chèvre de l'espace qui se nourrit de je ne sais quoi débile et ne prend plus d'espace, etc...
 // un magasin par type ? (pour séparation logique && graphique) avec notamment une ptite image de fond et à terme un style ? (et un son de chèvre ?)
 function MagasinNeutre(){
-    this.Magasin = new Magasin("Magasin neutre");
+    this.Magasin = new Store("Magasin neutre");
 
     // pour test
     this.Competences = [];
@@ -124,6 +126,45 @@ function FirstMagasin(){
     );
 }
 
-function MagasinDemonique(){
-    this.Magasin = new Magasin("Magasin démoniaque");
+function DemonicStore(){
+    this.Store = ko.observable(new Store("Where the devil comes to drink..."));
+
+    this.RelatedSkills = ko.observableArray([
+        new TBruteSkill(
+            "Goat Madness",
+            "One night, drunk, you reach your home when a goat stands between you and the door of your sweet sweet home. "+
+                "This should have ended here, but while you were trying to make her/it move her/its ass, you saw a dark look in his eyes."+
+                "Frightened by the glooming look watching for your every move, the blood rushed to your brain, you rose high your" +
+                "pocket-hatchet (yes you have one) and killed the foolish goat. Possessed, your fury could not end before sackaging half of" +
+                "your goat cheptel." +
+                "Oh, and for the bonus, the remaining goats are harder, better, faster, stronger, and you can sacrifice some to apply additional bonuses.",
+            "...jpg",
+            EVariableEffet.niveauCommercant,
+            ko.observableArray([
+                new TBruteSkill(
+                    "S",
+                    "",
+                    "...jpg",
+                    EVariableEffet.espaceConsomme,
+                    [],
+                    10
+                ),new TBruteSkill(
+                    "D",
+                    "",
+                    "...jpg",
+                    EVariableEffet.espaceConsomme,
+                    [],
+                    10),
+                new TBruteSkill(
+                    "M",
+                    "",
+                    "...jpg",
+                    EVariableEffet.espaceConsomme,
+                    [],
+                    10
+                )
+            ]),
+            5
+        )
+    ]);
 }

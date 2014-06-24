@@ -87,7 +87,7 @@ $(function () {
     BLOC TEST DAMIEN
     *
      */
-    var si = new SysInfos();
+    //var si = new SysInfos();
 
     //  var banque = si.Banque;
     // var Magasin = si.Magasins
@@ -95,16 +95,16 @@ $(function () {
 
     // on click goat
     //qté production lait :
-    var qteLaitProduiteOnClick = si.Banque.GenererProduction(si.Player);
+    //var qteLaitProduiteOnClick = si.Banque.GenererProduction(si.Player);
     // et donc si stockage :
-    si.Player.LaitAccumule += si.Banque.GenererProduction(si.Player);
+    //si.Player.LaitAccumule += si.Banque.GenererProduction(si.Player);
     // or
-    si.GenererProductionClic();
+    //si.GenererProductionClic();
     // TODO : faire chainons manquants pour rattrapage lors chargement sauvegarde
     // si.ApplyAutoClics();
 
     // génération revenu (si pas stockage, actions liées):
-    var revenuOnClick = si.Banque.GenererRevenu(si.Player);
+    //var revenuOnClick = si.Banque.GenererRevenu(si.Player);
 
     // génération de click auto
     // (si.Player.FrequenceAutomaticClic * secondes) * Si.GenererProduction();
