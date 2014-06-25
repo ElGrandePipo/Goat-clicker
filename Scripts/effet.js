@@ -1,7 +1,18 @@
 /**
  * Created by Damien on 6/10/14.
  */
-var EVariableEffet = {"qualiteLait":1, "ratioProductionLait":2, "espaceConsomme":3, "niveauCommercant":4, "freqAutoClic":5};
+var EVariableEffet =
+{
+    "qualiteLait":1,
+    "ratioProductionLait":2,
+    "espaceConsomme":3,
+    "niveauCommercant":4,
+    "freqAutoClic":5,
+    "goatSacrifice":6,
+    "goatMilkQuality":7,
+    "goatMilkProductivity":8,
+    "goatSpace":9
+};
 Object.freeze(EVariableEffet);
 
 function Effet(enumEffet, modificateur){
