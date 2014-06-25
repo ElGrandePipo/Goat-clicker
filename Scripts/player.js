@@ -34,6 +34,25 @@ function Player(){
         var reste = this.SommeDisponible() - skill.Price();
         this.SommeDisponible(reste);
 
+        for(var x = 0; x < skill.Effects().length; x++){
+            var effect = skill.Effects()[x];
+
+            if (effect.Effet == EVariableEffet.goatMilkProductivity){
+                for (var i = 0; i < this.goats.length; i++){
+                    // déplacer la mécanique de calcul mais flemme
+                    if (effect.Modificateur.Modif == EModificateur.fois){
+                        this.goats[i].ratioProductionLait *= effect.Modificateur.Valeur;
+                    }
+
+                    if (effect.Modificateur.Modif == EModificateur.plus){
+                        this.goats[i].ratioProductionLait += effect.Modificateur.Valeur;
+                    }
+                }
+            }
+        }
+
+
+
         /*
         if (skill.Effet.Effet == EVariableEffet.espaceConsomme){
             for (var i = 0; i < this.goats.length; i++){

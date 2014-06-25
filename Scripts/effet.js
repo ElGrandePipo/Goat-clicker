@@ -15,6 +15,7 @@ var EVariableEffet =
 };
 Object.freeze(EVariableEffet);
 
+// would be nice to have a description string at some time.
 function Effet(enumEffet, modificateur){
     this.Effet = enumEffet;
     this.Modificateur = modificateur;
