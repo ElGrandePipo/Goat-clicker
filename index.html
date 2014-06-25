@@ -76,16 +76,51 @@
                     <p data-bind="text: Player().SommeDisponible()"></p>
                     <ul data-bind="foreach: DemonicStore().RelatedSkills()">
                         <li>
-                            <img data-bind="attr: { src: Illustration }" style="width : 50px;" />
-                            <p data-bind="text: Name"></p>
-                            <p data-bind="text: Description"></p>
-                            <p data-bind="text: Price"></p>
+                            <table data-bind="click: $root.SkillBought($data);">
+                                <caption data-bind="text: Name"></caption>
+                                <tr>
+                                    <th rowspan="3">
+                                        <img data-bind="attr: { src: Illustration }" style="width : 50px;" />
+                                    </th>
+                                    <td colspan="3" data-bind="text: Description" style="border: 1px solid black;"></td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td data-bind="text: Price"></td>
+                                </tr>
+                            </table>
+
+
                             <ul data-bind="foreach: $data.RelatedSkills()" >
                                 <li>
-                                    <img data-bind="attr: { src: Illustration }" style="width : 50px;" />
-                                    <p data-bind="text: Name, click: $root.SkillBought($data);"></p>
-                                    <p data-bind="text: Description"></p>
-                                    <p data-bind="text: Price"></p>
+                                    <table data-bind="click: $root.SkillBought($data);">
+                                        <caption data-bind="text: Name"></caption>
+                                        <tr>
+                                            <th rowspan="3">
+                                                <img data-bind="attr: { src: Illustration }" style="width : 50px;" />
+                                            </th>
+                                            <td colspan="3" data-bind="text: Description" style="border: 1px solid black;"></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td data-bind="text: Price"></td>
+                                        </tr>
+                                    </table>
+
                                     <!-- trollolo -->
                                     <ul data-bind="foreach: $data.RelatedSkills">
                                         <li>
