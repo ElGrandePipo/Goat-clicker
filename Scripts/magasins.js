@@ -139,30 +139,31 @@ function DemonicStore(){
                 "your goat cheptel." +
                 "Oh, and for the bonus, the remaining goats are harder, better, faster, stronger, and you can sacrifice some to apply additional bonuses.",
             "Content/img/store/goat-queen.jpg",
-            ko.observableArray([
+            EVariableEffet.goatMilkProductivity,
+            /*ko.observableArray([
                 new Effet(EVariableEffet.goatSacrifice, new Modificateur(EModificateur.fois, 1/2)),
                 new Effet(EVariableEffet.goatMilkProductivity, new Modificateur(EModificateur.fois, 1.5))
-            ]),
+            ])*/
             ko.observableArray([
                 new TBruteSkill(
                     "S",
                     "",
                     "Content/img/store/lannister-goat.jpg",
-                    EVariableEffet.espaceConsomme,
+                    EVariableEffet.goatMilkProductivity,
                     [],
                     10
                 ),new TBruteSkill(
                     "D",
                     "",
                     "Content/img/store/goat-queen.jpg",
-                    EVariableEffet.espaceConsomme,
+                    EVariableEffet.goatMilkProductivity,
                     [],
                     10),
                 new TBruteSkill(
                     "M",
                     "",
                     "Content/img/store/lannister-goat.jpg",
-                    EVariableEffet.espaceConsomme,
+                    EVariableEffet.goatMilkProductivity,
                     [],
                     10
                 )

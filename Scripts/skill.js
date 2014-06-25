@@ -52,7 +52,7 @@ function TBruteSkill(nom, description, image, effect, sousCompetencesBrutes, pri
     this.Illustration = ko.observable(image);
 
     // actually maybe a skill should just be a collection of effects with an effect as a "type", a numeric variable operator, and a value
-    this.Effect = ko.observableArray(effect);
+    //this.Effect = ko.observableArray(effect);
     this.RelatedSkills = sousCompetencesBrutes;
     this.Price = ko.observable(prix);
 
