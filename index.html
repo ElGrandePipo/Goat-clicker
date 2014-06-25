@@ -73,7 +73,17 @@
             <div class="col-md-5" id="otherStore" style="border-left : 1px solid #c2c2c2;border-right : 1px solid #c2c2c2;">
                 <div class="h2-wrap centrer">
                     <h2 class="standard-block" data-bind="text: DemonicStore().Store().Texte()"></h2>
-                    <p data-bind="text: Player().SommeDisponible()"></p>
+                    <table>
+                        <caption>Player infos</caption>
+                        <tr>
+                            <td>Goats :</td>
+                            <td data-bind="text: Player().goats.length"></td>
+                        </tr>
+                        <tr>
+                            <td>Cash :</td>
+                            <td data-bind="text: Player().SommeDisponible()"></td>
+                        </tr>
+                    </table>
                     <ul data-bind="foreach: DemonicStore().RelatedSkills()">
                         <li>
                             <table data-bind="click: $root.SkillBought($data);">

@@ -37,6 +37,8 @@ function SysInfos(){
     }
 
     this.ClickMainGoat = function(){
+        // find a way to get a notion of acceleration in clicks so as there is an "interest" at brutalizing its mouse...
+
         this.Player().SommeDisponible(this.Player().SommeDisponible() + 20);
     }
 

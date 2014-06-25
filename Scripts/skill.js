@@ -62,6 +62,6 @@ function TBruteSkill(nom, description, image, effect, sousCompetencesBrutes, pri
 
         // effect rises log ?
 
-        // canGainLevel ? MaxLevel ? 
+        // canGainLevel ? MaxLevel ?
     }
 }
