@@ -46,6 +46,8 @@ function SysInfos(){
         // find a way to get a notion of acceleration in clicks so as there is an "interest" at brutalizing its mouse...
 
         this.Player().SommeDisponible(this.Player().SommeDisponible() + 20);
+        // todo: should not be done this way but right now is...
+        this.DemonicStore().UpdateAvalaibility(this.Player().SommeDisponible());
     }
 
     this.Test = function(){
