@@ -1,13 +1,13 @@
 /**
  * Created by Damien on 6/10/14.
  */
-function Banque(prixDuLitre){
+function Market(prixDuLitre){
     // voir si fluctuation avec evenements krach laitier ...
-    this.prixDuLitre = prixDuLitre;
+    this.LiterPrice = ko.observable(prixDuLitre);
 
     this.GenererRevenu = function (player){
         // les ratios bien au pif
-        return this.GenererProduction(player.LaitAccumule)*(this.prixDuLitre * (1 + player.CommercantLevel * 0.5));
+        return this.GenererProduction(player.goats)*(this.LiterPrice() * (1 + player.CommercantLevel * 0.5));
     }
 
     this.GenererProduction = function(goats){
@@ -15,7 +15,7 @@ function Banque(prixDuLitre){
 
         for (var i = 0; i < goats.length; i++){
             // qualite Lait devrait pas être là mais dans un premier temps si
-            total += goats[i].ratioProductionLait * goat[i].qualiteLait;
+            total += goats[i].ratioProductionLait * goats[i].qualiteLait;
         }
 
         return total;

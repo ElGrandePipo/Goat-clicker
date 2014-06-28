@@ -21,8 +21,8 @@ function Player(){
     this.LaitAccumule = 0;
     this.SommeDisponible = ko.observable(500);
 
-    this.VendreLait = function(banque){
-        this.SommeDisponible(SommeDisponible() + banque.GenererRevenu(this));
+    this.SellMilk = function(banque){
+        this.SommeDisponible(this.SommeDisponible() + banque.GenererRevenu(this));
         this.LaitAccumule = 0;
     }
 

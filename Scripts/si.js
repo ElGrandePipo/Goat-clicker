@@ -3,7 +3,7 @@
  */
 function SysInfos(){
 
-    this.Banque = ko.observable(new Banque(20));
+    this.Market = ko.observable(new Market(100));
     // à remplacer par tab de magasins
     this.Magasins = new MagasinNeutre();
 
@@ -13,7 +13,7 @@ function SysInfos(){
     this.DemonicStore = ko.observable(new DemonicStore());
 
     this.GenererProductionClic = function(){
-        return this.Banque.GenererProduction(this);
+        return this.Market().GenererProduction(this);
     }
 
     // TODO prendre timestamp derniere sauvegarde pour différentiel lorsque reprise
@@ -44,7 +44,7 @@ function SysInfos(){
     this.ClickMainGoat = function(){
         // find a way to get a notion of acceleration in clicks so as there is an "interest" at brutalizing its mouse...
 
-        this.Player().SommeDisponible(this.Player().SommeDisponible() + 20);
+        this.Player().SellMilk(this.Market());
         // todo: should not be done this way but right now is...
         // must be applied on Player.SommeDisponible() value changed
        // this.DemonicStore().UpdateAvalaibility(this.Player().SommeDisponible());
