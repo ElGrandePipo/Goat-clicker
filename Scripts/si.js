@@ -9,6 +9,7 @@ function SysInfos(){
 
     this.Player = ko.observable(new Player());
 
+
     this.DemonicStore = ko.observable(new DemonicStore());
 
     this.GenererProductionClic = function(){
@@ -37,9 +38,7 @@ function SysInfos(){
         }
 
         // todo: update Stores and avalaibilities
-        this.DemonicStore().UpdateAvalaibility(this.Player().SommeDisponible());
-
-
+        this.UpdateAllInfos();
     }
 
     this.ClickMainGoat = function(){
@@ -47,6 +46,11 @@ function SysInfos(){
 
         this.Player().SommeDisponible(this.Player().SommeDisponible() + 20);
         // todo: should not be done this way but right now is...
+        // must be applied on Player.SommeDisponible() value changed
+       // this.DemonicStore().UpdateAvalaibility(this.Player().SommeDisponible());
+    }
+
+    this.UpdateAllInfos = function(){
         this.DemonicStore().UpdateAvalaibility(this.Player().SommeDisponible());
     }
 
@@ -56,8 +60,14 @@ function SysInfos(){
 
 }
 
+var sysInfos = new SysInfos();
+//if working to do with skill
+var subscriptionOnSommePlayerChanged = sysInfos.Player().SommeDisponible.subscribe(function(newValue){
+    sysInfos.DemonicStore().UpdateAvalaibility(newValue);
+});
 
-ko.applyBindings(new SysInfos());
+
+ko.applyBindings(sysInfos);
 
 // commercant : dans un premier temps simple niveau
 
