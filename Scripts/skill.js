@@ -56,6 +56,10 @@ function TBruteSkill(nom, description, image, effect, sousCompetencesBrutes, pri
     this.RelatedSkills = sousCompetencesBrutes;
     this.Price = ko.observable(prix);
 
+    // todo : init avalaible in an accurate way + see if better way to do
+    this.Avalaible = ko.observable(true);
+    this.Classe = ko.observable("avalaible");
+
     this.GainLevel = function(){
         // read into write
         this.Price(this.Price() *2);
@@ -64,4 +68,18 @@ function TBruteSkill(nom, description, image, effect, sousCompetencesBrutes, pri
 
         // canGainLevel ? MaxLevel ?
     }
+
+    this.UpdateAvalaibility = function(playerMoney){
+        // boaf
+        this.Avalaible(this.Price() < playerMoney);
+        this.Classe(this.Avalaible() ? "avalaible": "not-avalaible");
+
+        for (var i = 0; i < this.RelatedSkills().length; i++){
+            this.RelatedSkills()[i].UpdateAvalaibility(playerMoney);
+        }
+    }
 }
+
+/*TBruteSkill.prototype.Class = function(){
+    return this.Avalaible() ? "avalaible" : "not-avalaible";
+}*/

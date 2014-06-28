@@ -27,7 +27,7 @@ function Player(){
     }
 
     this.CanBuySkill = function(skill){
-        return this.SommeDisponible() >= skill.Prix;
+        return this.SommeDisponible() >= skill.Price();
     }
 
     this.BuySkill = function(skill){

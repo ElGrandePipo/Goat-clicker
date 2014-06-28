@@ -29,11 +29,17 @@ function SysInfos(){
     }
 
     this.SkillBought = function(skill){
-        // player achat
-        this.Player().BuySkill(skill);
+        if (this.Player().CanBuySkill(skill)){
+            // player achat
+            this.Player().BuySkill(skill);
+            // competence "level-up"
+            skill.GainLevel();
+        }
 
-        // competence "level-up"
-        skill.GainLevel();
+        // todo: update Stores and avalaibilities
+        this.DemonicStore().UpdateAvalaibility(this.Player().SommeDisponible());
+
+
     }
 
     this.ClickMainGoat = function(){

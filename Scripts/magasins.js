@@ -152,7 +152,7 @@ function DemonicStore(){
                         new Effet(EVariableEffet.goatSacrifice, new Modificateur(EModificateur.fois, 1/2)),
                         new Effet(EVariableEffet.goatMilkProductivity, new Modificateur(EModificateur.fois, 1.5))
                     ]),
-                    [],
+                    ko.observableArray([]),
                     10
                 ),new TBruteSkill(
                     "D",
@@ -162,7 +162,7 @@ function DemonicStore(){
                         new Effet(EVariableEffet.goatSacrifice, new Modificateur(EModificateur.fois, 1/2)),
                         new Effet(EVariableEffet.goatMilkProductivity, new Modificateur(EModificateur.fois, 1.5))
                     ]),
-                    [],
+                    ko.observableArray([]),
                     10),
                 new TBruteSkill(
                     "M",
@@ -172,11 +172,18 @@ function DemonicStore(){
                         new Effet(EVariableEffet.goatSacrifice, new Modificateur(EModificateur.fois, 1/2)),
                         new Effet(EVariableEffet.goatMilkProductivity, new Modificateur(EModificateur.fois, 1.5))
                     ]),
-                    [],
+                    ko.observableArray([]),
                     10
                 )
             ]),
             5
         )
     ]);
+
+    // todo : only money but should introduce more requirements
+    this.UpdateAvalaibility = function(playerMoney){
+        for (var i = 0; i < this.RelatedSkills().length; i++){
+            this.RelatedSkills()[i].UpdateAvalaibility(playerMoney);
+        }
+    }
 }

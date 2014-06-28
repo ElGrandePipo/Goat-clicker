@@ -88,7 +88,7 @@
                     </table>
                     <ul data-bind="foreach: DemonicStore().RelatedSkills()" class="skills">
                         <li>
-                            <table data-bind="click: $root.SkillBought($data);">
+                            <table data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
                                 <caption data-bind="text: Name" class="skill-title"></caption>
                                 <tr>
                                     <th rowspan="3" >
@@ -112,7 +112,7 @@
 
                             <ul data-bind="foreach: $data.RelatedSkills()" class="skills">
                                 <li>
-                                    <table data-bind="click: $root.SkillBought($data);">
+                                    <table data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
                                         <caption data-bind="text: Name" class="skill-title"></caption>
                                         <tr>
                                             <th rowspan="3">

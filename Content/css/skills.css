@@ -19,3 +19,11 @@
 .effects{
     background-color:deepskyblue;
 }
+
+.avalaible{
+    background-color:#ffff00;
+}
+
+.not-avalaible{
+    background-color:blueviolet;
+}
