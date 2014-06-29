@@ -23,13 +23,13 @@
     background-color:#464c4e;
     height: 50px;
     max-height: 50px;
+    overflow: hidden;
     transition: max-height 1s ease-in .5s;
 }
 
 .description:hover {
-    height: 100px;
-    max-height: 150px;
-    border-radius: 50%;
+    height: auto;
+    max-height: 1500px;
 }
 
 .effects{
