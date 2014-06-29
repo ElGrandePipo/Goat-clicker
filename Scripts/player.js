@@ -5,6 +5,7 @@ function Player(){
     // introduire enum moralité
     // this.morality = ;
 
+    // tab to see if sacrifice taken into account
     this.Goats = ko.observableArray([
         new Goat(1, 1, 1),
         new Goat(1, 1, 1),
@@ -23,10 +24,10 @@ function Player(){
     // nombre de clics automatique (par sec)
     this.FrequenceAutomaticClic = 0;
 
-    // en nombre de chèvres
+    // max number of goats possible (depends on the space they consume)
     this.EspaceDisponible = 4;
 
-    // litres // stockage ?
+    // if we don't sell right away the milk, more mechanics can be conceived
     this.LaitAccumule = 0;
     this.SommeDisponible = ko.observable(500);
 
@@ -46,6 +47,7 @@ function Player(){
         for(var x = 0; x < skill.Effects().length; x++){
             var effect = skill.Effects()[x];
 
+            // todo would be nice to find a way to properly isolate all of this cause there will be many possible effects
             if (effect.Effet == EVariableEffet.goatMilkProductivity){
                 for (var i = 0; i < this.Goats().length; i++){
                     // déplacer la mécanique de calcul mais flemme
@@ -65,6 +67,15 @@ function Player(){
 
                     this.Goats().splice(nbRemaining, this.Goats().length - nbRemaining);
                     this.GoatsNumber(this.Goats().length);
+                }
+
+                if (effect.Modificateur.Modif == EModificateur.plus){
+                    if (effect.Modificateur.Valeur > 0){
+                        // todo add goat (construction depends on the bonuses of the player)
+                    }
+                    else {
+                        this.Goats().splice(this.Goats().length - effect.Modificateur.Valeur, effect.Modificateur.Valeur);
+                    }
                 }
             }
         }
