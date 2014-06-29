@@ -80,80 +80,79 @@
             <div class="col-md-5" id="otherStore" style="border-left : 1px solid #c2c2c2;border-right : 1px solid #c2c2c2;">
                 <div class="h2-wrap centrer">
                     <h2 class="standard-block" data-bind="text: DemonicStore().Store().Texte()"></h2>
-                    <table>
-                        <caption>Player infos</caption>
-                        <tr>
-                            <td>Goats :</td>
-                            <td data-bind="text: Player().goats.length"></td>
-                        </tr>
-                        <tr>
-                            <td>Cash :</td>
-                            <td data-bind="text: Player().SommeDisponible()"></td>
-                        </tr>
-                    </table>
-                    <ul data-bind="foreach: DemonicStore().RelatedSkills()" class="skills">
-                        <li>
-                            <table data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
-                                <caption data-bind="text: Name" class="skill-title"></caption>
-                                <tr>
-                                    <th rowspan="3" >
+                    <div>
+                        <div>Player infos</div>
+                        <div>
+                            <div>Goats :</div>
+                            <div data-bind="text: Player().GoatsNumber()"></div>
+                        </div>
+                        <div>
+                            <div>Cash :</div>
+                            <div data-bind="text: Player().SommeDisponible()"></div>
+                        </div>
+                    </div>
+                    <div data-bind="foreach: DemonicStore().RelatedSkills()" class="skills">
+                        <div class="skill">
+                            <div data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
+                                <div data-bind="text: Name" class="skill-title"></div>
+                                <div>
+                                    <div rowspan="3" >
                                         <img data-bind="attr: { src: Illustration }" style="width : 50px;" class="icon" />
-                                    </th>
-                                    <td colspan="3" data-bind="text: Description" style="border: 1px solid black;" class="description"></td>
+                                    </div>
+                                </div>
+                                <div data-bind="text: Description" style="border: 1px solid black;" class="description"></div>
+                                <div data-bind="foreach: Effects" class="effects">
+                                    <div>1</div>
+                                    <div>1</div>
+                                    <div>1</div>
+                                </div>
+                                <div>
+                                    <div></div>
+                                    <div></div>
+                                    <div data-bind="text: Price"></div>
+                                </div>
+                            </div>
 
-                                </tr>
-                                <tr data-bind="foreach: Effects" class="effects">
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td data-bind="text: Price"></td>
-                                </tr>
-                            </table>
 
-
-                            <ul data-bind="foreach: $data.RelatedSkills()" class="skills">
-                                <li>
-                                    <table data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
-                                        <caption data-bind="text: Name" class="skill-title"></caption>
-                                        <tr>
-                                            <th rowspan="3">
+                            <div data-bind="foreach: $data.RelatedSkills()" class="skills">
+                                <div class="skill">
+                                    <div data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
+                                        <div data-bind="text: Name" class="skill-title"></div>
+                                        <div>
+                                            <div rowspan="3">
                                                 <img data-bind="attr: { src: Illustration }" style="width : 50px;" class="icon" />
-                                            </th>
-                                            <td colspan="3" data-bind="text: Description" style="border: 1px solid black;" class="description"></td>
+                                            </div>
+                                            <div colspan="3" data-bind="text: Description" style="border: 1px solid black;" class="description"></div>
 
-                                        </tr>
-                                        <tr data-bind="foreach: Effects"  class="effects">
-                                            <td>2</td>
-                                            <td>1</td>
-                                            <td>3</td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td data-bind="text: Price"></td>
-                                        </tr>
-                                    </table>
+                                        </div>
+                                        <div data-bind="foreach: Effects"  class="effects">
+                                            <div>2</div>
+                                            <div>1</div>
+                                            <div>3</div>
+                                        </div>
+                                        <div>
+                                            <div></div>
+                                            <div></div>
+                                            <div data-bind="text: Price"></div>
+                                        </div>
+                                    </div>
 
                                     <!-- trollolo -->
-                                    <ul data-bind="foreach: $data.RelatedSkills">
-                                        <li>
-                                            <ul data-bind="foreach: $data.RelatedSkills">
-                                                <li>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                                    <div data-bind="foreach: $data.RelatedSkills">
+                                        <div>
+                                            <div data-bind="foreach: $data.RelatedSkills">
+                                                <div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!--ul data-bind="foreach: RelatedSkills">
                             <li></li>
                         </ul-->
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -188,7 +187,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
      <script src="Scripts/unslider.min.js"></script>
     <script type="text/javascript" src="Scripts/sound.js"></script>
-    <script type="text/javascript" src="Scripts/banque.js"></script>
+    <script type="text/javascript" src="Scripts/market.js"></script>
     <script type="text/javascript" src="Scripts/effet.js"></script>
     <script type="text/javascript" src="Scripts/goat.js"></script>
     <script type="text/javascript" src="Scripts/moralite.js"></script>

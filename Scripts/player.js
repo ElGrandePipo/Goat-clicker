@@ -5,9 +5,18 @@ function Player(){
     // introduire enum moralité
     // this.morality = ;
 
-    this.goats = new Array();
-    // la chèvre de base
-    this.goats.push(new Goat(0.2, 1, 1));
+    this.Goats = ko.observableArray([
+        new Goat(1, 1, 1),
+        new Goat(1, 1, 1),
+        new Goat(1, 1, 1),
+        new Goat(1, 1, 1),
+        new Goat(1, 1, 1),
+        new Goat(1, 1, 1),
+        new Goat(1, 1, 1),
+        new Goat(1, 1, 1)
+    ]);
+
+    this.GoatsNumber =  ko.observable(this.Goats().length);
 
     this.CommercantLevel = 0;
 
@@ -38,15 +47,24 @@ function Player(){
             var effect = skill.Effects()[x];
 
             if (effect.Effet == EVariableEffet.goatMilkProductivity){
-                for (var i = 0; i < this.goats.length; i++){
+                for (var i = 0; i < this.Goats().length; i++){
                     // déplacer la mécanique de calcul mais flemme
                     if (effect.Modificateur.Modif == EModificateur.fois){
-                        this.goats[i].ratioProductionLait *= effect.Modificateur.Valeur;
+                        this.Goats()[i].ratioProductionLait *= effect.Modificateur.Valeur;
                     }
 
                     if (effect.Modificateur.Modif == EModificateur.plus){
-                        this.goats[i].ratioProductionLait += effect.Modificateur.Valeur;
+                        this.Goats()[i].ratioProductionLait += effect.Modificateur.Valeur;
                     }
+                }
+            }
+
+            if (effect.Effet == EVariableEffet.goatSacrifice){
+                if (effect.Modificateur.Modif == EModificateur.fois){
+                    var nbRemaining = this.Goats().length * effect.Modificateur.Valeur;
+
+                    this.Goats().splice(nbRemaining, this.Goats().length - nbRemaining);
+                    this.GoatsNumber(this.Goats().length);
                 }
             }
         }
@@ -105,8 +123,8 @@ function Player(){
 
     this.GetGoatSpace= function(){
         var space = 0;
-        for (var i = 0; i < this.goats.length; i++){
-            space += this.goats[i].espaceConsomme;
+        for (var i = 0; i < this.Goats().length; i++){
+            space += this.Goats()[i].espaceConsomme;
         }
 
         return space;
@@ -119,7 +137,7 @@ function Player(){
 
     this.BuyGoat = function(goat, price){
         this.SommeDisponible -= price;
-        this.goats.push(goat);
+        this.Goats().push(goat);
     }
 
     this.Personality = new PluriMoralities();

@@ -149,7 +149,7 @@ function DemonicStore(){
                     "",
                     "Content/img/store/lannister-goat.jpg",
                     ko.observableArray([
-                        new Effet(EVariableEffet.goatSacrifice, new Modificateur(EModificateur.fois, 1/2)),
+                        new Effet(EVariableEffet.goatSpace, new Modificateur(EModificateur.fois, 1/2)),
                         new Effet(EVariableEffet.goatMilkProductivity, new Modificateur(EModificateur.fois, 1.5))
                     ]),
                     ko.observableArray([]),
@@ -159,7 +159,7 @@ function DemonicStore(){
                     "",
                     "Content/img/store/goat-queen.jpg",
                     ko.observableArray([
-                        new Effet(EVariableEffet.goatSacrifice, new Modificateur(EModificateur.fois, 1/2)),
+                        new Effet(EVariableEffet.goatSpace, new Modificateur(EModificateur.fois, 1/2)),
                         new Effet(EVariableEffet.goatMilkProductivity, new Modificateur(EModificateur.fois, 1.5))
                     ]),
                     ko.observableArray([]),
@@ -169,7 +169,7 @@ function DemonicStore(){
                     "",
                     "Content/img/store/lannister-goat.jpg",
                     ko.observableArray([
-                        new Effet(EVariableEffet.goatSacrifice, new Modificateur(EModificateur.fois, 1/2)),
+                        new Effet(EVariableEffet.goatSpace, new Modificateur(EModificateur.fois, 1/2)),
                         new Effet(EVariableEffet.goatMilkProductivity, new Modificateur(EModificateur.fois, 1.5))
                     ]),
                     ko.observableArray([]),

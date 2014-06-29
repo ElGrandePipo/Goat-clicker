@@ -2,6 +2,13 @@
     background-color:orangered;
 }
 
+.skill {
+    background-color: #242a2c;
+    color: #ffffcc;
+}
+
+
+
 .skill-title{
     font-family:"Arial Black", Gadget, sans-serif;
     font-size:150%;
@@ -13,7 +20,16 @@
 }
 
 .description{
-    background-color:#f5f5f5;
+    background-color:#464c4e;
+    height: 50px;
+    max-height: 50px;
+    transition: max-height 1s ease-in .5s;
+}
+
+.description:hover {
+    height: 100px;
+    max-height: 150px;
+    border-radius: 50%;
 }
 
 .effects{
@@ -21,9 +37,9 @@
 }
 
 .avalaible{
-    background-color:#ffff00;
+    background-color:#464c4e;
 }
 
 .not-avalaible{
-    background-color:blueviolet;
+    background-color: #844c4e;
 }
