@@ -19,6 +19,40 @@ Object.freeze(EVariableEffet);
 function Effet(enumEffet, modificateur){
     this.Effet = enumEffet;
     this.Modificateur = modificateur;
+
+    // todo: put it in a better place and better way
+    var description = "None";
+    if (this.Effet == EVariableEffet.goatSacrifice){
+        if (this.Modificateur.Modif == EModificateur.fois){
+            description = "Effect: your number of goats will be set to " + this.Modificateur.Valeur.toString() + " its current value.";
+        }
+
+        if (this.Modificateur.Modif == EModificateur.plus){
+            if (this.Modificateur.Valeur > 0){
+                description = "Effect: your number of goats will be raised by " + this.Modificateur.Valeur.toString();
+            }
+            else {
+                description = "Effect: your number of goats will be reduced by " + this.Modificateur.Valeur.toString() + " its current value."
+            }
+        }
+    }
+
+    if (this.Effet == EVariableEffet.goatMilkProductivity){
+        if (this.Modificateur.Modif == EModificateur.fois){
+            description = "Effect: the productivity of your goats will be set to " + this.Modificateur.Valeur.toString() + " its current value.";
+        }
+
+        if (this.Modificateur.Modif == EModificateur.plus){
+            if (this.Modificateur.Valeur > 0){
+                description = "Effect: the productivity of your goats will be increased by " + this.Modificateur.Valeur.toString();
+            }
+            else {
+                description = "Effect: the productivity of your goats will be decreased by " + this.Modificateur.Valeur.toString();
+            }
+        }
+    }
+
+    this.Description = ko.observable(description);
 }
 
 var EModificateur = {"plus":1, "fois":2};
