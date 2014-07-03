@@ -13,69 +13,13 @@
 // todo we create a capacity product(? maybe only for goats at least at first) and an owned products list for player for each existing product
 // we show the reflect of the products existence in both ok for market but todo for player
 
-function Requirement(productName, qty){
-    this.ProductName = ko.observable(productName);
-    this.Quantity = ko.observable(qty);
-}
-
-function Product(name, price, image, requirements){
-    this.Name = ko.observable(name);
-    this.Price = ko.observable(price);
-    this.Img = ko.observable(image);
-    this.Requirements = ko.observableArray(requirements);
-}
-
-function ProductOwning(product, qty)
-{
-    this.Product = ko.observable(product);
-    this.Quantity = ko.observable(qty);
-}
-
-function ProductsOwning(productsOwning){
-    this.ProductsOwning = productsOwning;
-}
-
-ProductsOwning.prototype.ProductByName = function(name){
-    var self = this;
-    var po = self.ProductsOwning();
-    for (var i = 0; i < po.length; i++){
-        if (po[i].Product().Name() == name){
-            return po[i];
-        }
-    }
-}
-
-// tocentralize
-function findElement(arr, propName, propValue) {
-    for (var i=0; i < arr.length; i++)
-        if (arr[i][propName] == propValue)
-            return arr[i];
-
-    // will return undefined if not found; you could return a default instead
-}
-
-function Products(products){
-    this.Products = products;
-}
-
-Products.prototype.Init = function(){
-    var milk = new Product("milk", 3, "Content/img/store/milk.jpg",[]);
-    var basicCheese = new Product("cheese", 10, "Content/img/store/goat-cheese.jpg", [new Requirement("milk", 3)]);
-    this.Products().push(milk);
-    this.Products().push(basicCheese);
-}
-
 function SysInfos(){
-    this.Products = ko.observable(
-        new Products(
-            ko.observableArray(
-                [
-                    new Product("milk", 3, "Content/img/store/milk.jpg",[]),
-                    new Product("cheese", 10, "Content/img/store/goat-cheese.jpg", [new Requirement("milk", 3)])
-                ]
-            )
-        )
-    );
+    var products = ko.observableArray();
+
+    products.push(new Product("milk", 3, "Content/img/store/milk.jpg",[]));
+    products.push(new Product("cheese", 10, "Content/img/store/goat-cheese.jpg", [new Requirement("milk", 3)]));
+
+    this.Products = ko.observable(new Products(products));
 
     this.Market = ko.observable(new Market(100, this.Products()));
     // à remplacer par tab de magasins
@@ -118,7 +62,7 @@ function SysInfos(){
     this.ClickMainGoat = function(){
         // find a way to get a notion of acceleration in clicks so as there is an "interest" at brutalizing its mouse...
 
-        this.Player().SellMilk(this.Market());
+        //this.Player().SellMilk(this.Market());
         this.Player().ProduceMilk();
         // todo: should not be done this way but right now is...
         // must be applied on Player.SommeDisponible() value changed
@@ -128,6 +72,10 @@ function SysInfos(){
     //todo
     this.ClickPlayerProduct = function(product){
         this.Player().CraftProduct(product);
+    }
+
+    this.ClickMarketProduct = function(product){
+        this.Player().SellProduct(product, this.Market());
     }
 
     this.UpdateAllInfos = function(){

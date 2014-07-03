@@ -72,111 +72,112 @@
 
                 </div>
             </div>
-            <div class="market">
-                <p>Market :</p>
-                <!-- toremove -->
-                <p data-bind="text: Market().LiterPrice()"></p>
 
-                <div data-bind="foreach: Market().SellableProducts().Products()">
-                    <div class="sellable-product">
-                        <div data-bind="text: $data.Name()"></div>
-                        <div data-bind="text: $data.Price()"></div>
-                        <!-- tomove -->
+        </div>
 
-                    </div>
+        <div class="markets">
+            <p>Market :</p>
+            <!-- toremove -->
+            <p data-bind="text: Market().LiterPrice()"></p>
+
+            <div data-bind="foreach: Market().SellableProducts().Products()">
+                <div class="sellable-product" data-bind="click: $root.ClickMarketProduct($data);">
+                    <img data-bind="attr: { src: Img() }" style="width : 50px;" class="icon" />
+                    <div data-bind="text: Name()"></div>
+                    <div data-bind="text: Price()"></div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-md-5" id="otherStore" style="border-left : 1px solid #c2c2c2;border-right : 1px solid #c2c2c2;">
-                <div class="h2-wrap centrer">
-                    <h2 class="standard-block" data-bind="text: DemonicStore().Store().Texte()"></h2>
-                    <div class="player">
-                        <div>Player infos</div>
-                        <div>
-                            <div>Goats :</div>
-                            <div data-bind="text: Player().GoatsNumber()"></div>
+        <div class="col-md-5" id="otherStore" style="border-left : 1px solid #c2c2c2;border-right : 1px solid #c2c2c2;">
+            <div class="h2-wrap centrer">
+                <h2 class="standard-block" data-bind="text: DemonicStore().Store().Texte()"></h2>
+                <div class="player">
+                    <div>Player infos</div>
+                    <div>
+                        <div>Goats :</div>
+                        <div data-bind="text: Player().GoatsNumber()"></div>
+                    </div>
+                    <div>
+                        <div>Cash :</div>
+                        <div data-bind="text: Player().SommeDisponible()"></div>
+                    </div>
+                    <div>
+                        <div>Owned :</div>
+                        <div data-bind="foreach: Player().ProductsOwning().ProductsOwning()">
+                            <div class="productOwning" data-bind="click: $root.ClickPlayerProduct($data);">
+                                <img data-bind="attr: { src: Product().Img() }" style="width : 30px;" class="icon" />
+                                <div data-bind="text: Product().Name()"></div>
+                                <div data-bind="text: Quantity()"></div>
+                                <div data-bind="foreach: Product().Requirements()">
+                                    <div class="requirement">
+                                        <div data-bind="text: $data.ProductName()"></div>
+                                        <div data-bind="text: $data.Quantity()"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <div>Cash :</div>
-                            <div data-bind="text: Player().SommeDisponible()"></div>
+                    </div>
+                </div>
+                <div data-bind="foreach: DemonicStore().RelatedSkills()" class="skills">
+                    <div class="skill">
+                        <div data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
+                            <div data-bind="text: Name" class="skill-title"></div>
+                            <div>
+                                <div rowspan="3" >
+                                    <img data-bind="attr: { src: Illustration }" style="width : 50px;" class="icon" />
+                                </div>
+                            </div>
+                            <div  class="description, repliable">
+                                <p data-bind="text: Description" ></p>
+                            </div>
+                            <div data-bind="foreach: Effects" class="effects">
+                                <p data-bind="text: Description"></p>
+                            </div>
+                            <div>
+                                <div></div>
+                                <div></div>
+                                <div data-bind="text: Price"></div>
+                            </div>
                         </div>
-                        <div>
-                            <div>Owned :</div>
-                            <div data-bind="foreach: Player().ProductsOwning().ProductsOwning()">
-                                <div class="productOwning" data-bind="click: $root.ClickPlayerProduct($data);">
-                                    <img data-bind="attr: { src: Product().Img() }" style="width : 50px;" class="icon" />
-                                    <div data-bind="text: Product().Name()"></div>
-                                    <div data-bind="text: Quantity()"></div>
-                                    <div data-bind="foreach: Product().Requirements()">
-                                        <div class="requirement">
-                                            <div data-bind="text: $data.ProductName()"></div>
-                                            <div data-bind="text: $data.Quantity()"></div>
+
+
+                        <div data-bind="foreach: $data.RelatedSkills()" class="skills">
+                            <div class="skill">
+                                <div data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
+                                    <div data-bind="text: Name" class="skill-title"></div>
+                                    <div>
+                                        <div rowspan="3">
+                                            <img data-bind="attr: { src: Illustration }" style="width : 50px;" class="icon" />
+                                        </div>
+                                        <div colspan="3" data-bind="text: Description" style="border: 1px solid black;" class="description"></div>
+
+                                    </div>
+                                    <div data-bind="foreach: Effects"  class="effects">
+                                        <p data-bind="text: Description"></p>
+                                    </div>
+                                    <div>
+                                        <div></div>
+                                        <div></div>
+                                        <div data-bind="text: Price"></div>
+                                    </div>
+                                </div>
+
+                                <!-- trollolo -->
+                                <div data-bind="foreach: $data.RelatedSkills">
+                                    <div>
+                                        <div data-bind="foreach: $data.RelatedSkills">
+                                            <div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div data-bind="foreach: DemonicStore().RelatedSkills()" class="skills">
-                        <div class="skill">
-                            <div data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
-                                <div data-bind="text: Name" class="skill-title"></div>
-                                <div>
-                                    <div rowspan="3" >
-                                        <img data-bind="attr: { src: Illustration }" style="width : 50px;" class="icon" />
-                                    </div>
-                                </div>
-                                <div  class="description, repliable">
-                                    <p data-bind="text: Description" ></p>
-                                </div>
-                                <div data-bind="foreach: Effects" class="effects">
-                                    <p data-bind="text: Description"></p>
-                                </div>
-                                <div>
-                                    <div></div>
-                                    <div></div>
-                                    <div data-bind="text: Price"></div>
-                                </div>
-                            </div>
-
-
-                            <div data-bind="foreach: $data.RelatedSkills()" class="skills">
-                                <div class="skill">
-                                    <div data-bind="click: $root.SkillBought($data), attr: { class: Classe }">
-                                        <div data-bind="text: Name" class="skill-title"></div>
-                                        <div>
-                                            <div rowspan="3">
-                                                <img data-bind="attr: { src: Illustration }" style="width : 50px;" class="icon" />
-                                            </div>
-                                            <div colspan="3" data-bind="text: Description" style="border: 1px solid black;" class="description"></div>
-
-                                        </div>
-                                        <div data-bind="foreach: Effects"  class="effects">
-                                            <p data-bind="text: Description"></p>
-                                        </div>
-                                        <div>
-                                            <div></div>
-                                            <div></div>
-                                            <div data-bind="text: Price"></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- trollolo -->
-                                    <div data-bind="foreach: $data.RelatedSkills">
-                                        <div>
-                                            <div data-bind="foreach: $data.RelatedSkills">
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--ul data-bind="foreach: RelatedSkills">
-                            <li></li>
-                        </ul-->
-                    </div>
+                    <!--ul data-bind="foreach: RelatedSkills">
+                        <li></li>
+                    </ul-->
                 </div>
             </div>
         </div>
@@ -211,6 +212,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
      <script src="Scripts/unslider.min.js"></script>
     <script type="text/javascript" src="Scripts/sound.js"></script>
+    <script type="text/javascript" src="Scripts/products.js"></script>
     <script type="text/javascript" src="Scripts/market.js"></script>
     <script type="text/javascript" src="Scripts/effet.js"></script>
     <script type="text/javascript" src="Scripts/goat.js"></script>

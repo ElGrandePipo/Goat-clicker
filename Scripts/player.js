@@ -49,7 +49,7 @@ function Player(products){
 
     // if we don't sell right away the milk, more mechanics can be conceived
     this.LaitAccumule = 0;
-    this.SommeDisponible = ko.observable(500);
+    this.SommeDisponible = ko.observable(000);
 
     this.SellMilk = function(banque){
         this.SommeDisponible(this.SommeDisponible() + banque.GenererRevenu(this));
@@ -60,6 +60,19 @@ function Player(products){
         var qty = this.ProductsOwning().ProductByName("milk").Quantity();
         qty += 2;
         this.ProductsOwning().ProductByName("milk").Quantity(qty);
+    }
+
+    this.SellProduct = function(product, market) {
+        var self = this;
+
+        var qtyOwned = self.ProductsOwning().ProductByName(product.Name()).Quantity();
+        if (qtyOwned > 0) {
+            // add money
+            self.SommeDisponible(self.SommeDisponible() + market.SellableProducts().ProductByName(product.Name()).Price());
+
+            // lowers qty
+            AddToObservable(self.ProductsOwning().ProductByName(product.Name()).Quantity, -1);
+        }
     }
 
     // todo
