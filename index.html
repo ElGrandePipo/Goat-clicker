@@ -104,6 +104,7 @@
                             <div>Owned :</div>
                             <div data-bind="foreach: Player().ProductsOwning().ProductsOwning()">
                                 <div class="productOwning" data-bind="click: $root.ClickPlayerProduct($data);">
+                                    <img data-bind="attr: { src: Product().Img() }" style="width : 50px;" class="icon" />
                                     <div data-bind="text: Product().Name()"></div>
                                     <div data-bind="text: Quantity()"></div>
                                     <div data-bind="foreach: Product().Requirements()">

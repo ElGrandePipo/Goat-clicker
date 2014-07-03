@@ -18,9 +18,10 @@ function Requirement(productName, qty){
     this.Quantity = ko.observable(qty);
 }
 
-function Product(name, price, requirements){
+function Product(name, price, image, requirements){
     this.Name = ko.observable(name);
     this.Price = ko.observable(price);
+    this.Img = ko.observable(image);
     this.Requirements = ko.observableArray(requirements);
 }
 
@@ -58,8 +59,8 @@ function Products(products){
 }
 
 Products.prototype.Init = function(){
-    var milk = new Product("milk", 3,[]);
-    var basicCheese = new Product("cheese", 10, [new Requirement("milk", 3)]);
+    var milk = new Product("milk", 3, "Content/img/store/milk.jpg",[]);
+    var basicCheese = new Product("cheese", 10, "Content/img/store/goat-cheese.jpg", [new Requirement("milk", 3)]);
     this.Products().push(milk);
     this.Products().push(basicCheese);
 }
@@ -69,8 +70,8 @@ function SysInfos(){
         new Products(
             ko.observableArray(
                 [
-                    new Product("milk", 3,[]),
-                    new Product("cheese", 10, [new Requirement("milk", 3)])
+                    new Product("milk", 3, "Content/img/store/milk.jpg",[]),
+                    new Product("cheese", 10, "Content/img/store/goat-cheese.jpg", [new Requirement("milk", 3)])
                 ]
             )
         )

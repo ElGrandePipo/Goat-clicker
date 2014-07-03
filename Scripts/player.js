@@ -31,7 +31,7 @@ function Player(products){
     var p = products.Products();
     for (var i = 0; i < p.length; i++){
         var productOwning = new ProductOwning(
-            new Product(p[i].Name(), p[i].Price(), p[i].Requirements()), 0
+            new Product(p[i].Name(), p[i].Price(), p[i].Img(), p[i].Requirements()), 0
         );
 
         productsOwning.push(productOwning);
@@ -65,12 +65,27 @@ function Player(products){
     // todo
     this.CraftProduct = function(product){
         // for each requirement => reduce qty of product owned
+        var self = this;
         var reqs = product.Product().Requirements();
+
+        // no requirement, no craft
+        if (reqs.length == 0) { return;}
+
+        //todo torefactor
+        for (var i = 0; i < reqs.length; i++){
+            var qtyOwned = self.ProductsOwning().ProductByName(reqs[i].ProductName()).Quantity();
+            var qtyRequired = reqs[i].Quantity();
+
+            if (qtyOwned < qtyRequired){
+                return;
+            }
+        }
+
         for (var i = 0; i < reqs.length; i++){
             AddToObservable(this.ProductsOwning().ProductByName(reqs[i].ProductName()).Quantity, -reqs[i].Quantity());
         }
 
-        // for product => increase it by one
+            // for product => increase it by one
         AddToObservable(this.ProductsOwning().ProductByName(product.Product().Name()).Quantity, 1);
     }
 
