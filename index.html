@@ -72,15 +72,25 @@
 
                 </div>
             </div>
-            <div>
+            <div class="market">
                 <p>Market :</p>
+                <!-- toremove -->
                 <p data-bind="text: Market().LiterPrice()"></p>
+
+                <div data-bind="foreach: Market().SellableProducts().Products()">
+                    <div class="sellable-product">
+                        <div data-bind="text: $data.Name()"></div>
+                        <div data-bind="text: $data.Price()"></div>
+                        <!-- tomove -->
+
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-5" id="otherStore" style="border-left : 1px solid #c2c2c2;border-right : 1px solid #c2c2c2;">
                 <div class="h2-wrap centrer">
                     <h2 class="standard-block" data-bind="text: DemonicStore().Store().Texte()"></h2>
-                    <div>
+                    <div class="player">
                         <div>Player infos</div>
                         <div>
                             <div>Goats :</div>
@@ -89,6 +99,19 @@
                         <div>
                             <div>Cash :</div>
                             <div data-bind="text: Player().SommeDisponible()"></div>
+                        </div>
+                        <div>
+                            <div>Owned :</div>
+                            <div data-bind="foreach: Player().ProductsOwning().ProductsOwning()">
+                                <div data-bind="text: Product().Name()"></div>
+                                <div data-bind="text: Quantity()"></div>
+                                <div data-bind="foreach: Product().Requirements()">
+                                    <div class="requirement">
+                                        <div data-bind="text: $data.ProductName()"></div>
+                                        <div data-bind="text: $data.Quantity()"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div data-bind="foreach: DemonicStore().RelatedSkills()" class="skills">
@@ -100,7 +123,7 @@
                                         <img data-bind="attr: { src: Illustration }" style="width : 50px;" class="icon" />
                                     </div>
                                 </div>
-                                <div  class="description">
+                                <div  class="description, repliable">
                                     <p data-bind="text: Description" ></p>
                                 </div>
                                 <div data-bind="foreach: Effects" class="effects">
@@ -126,9 +149,7 @@
 
                                         </div>
                                         <div data-bind="foreach: Effects"  class="effects">
-                                            <div>2</div>
-                                            <div>1</div>
-                                            <div>3</div>
+                                            <p data-bind="text: Description"></p>
                                         </div>
                                         <div>
                                             <div></div>

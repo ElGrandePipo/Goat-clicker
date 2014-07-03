@@ -1,7 +1,7 @@
 /**
  * Created by Damien on 6/10/14.
  */
-function Player(){
+function Player(products){
     // introduire enum moralité
     // this.morality = ;
 
@@ -18,6 +18,20 @@ function Player(){
     ]);
 
     this.GoatsNumber =  ko.observable(this.Goats().length);
+
+    // he's gonna have 1 ProductsOwning for what he has (milk, etc.)
+    var productsOwning = ko.observableArray();
+
+    var p = products.Products();
+    for (var i = 0; i < p.length; i++){
+        var productOwning = new ProductOwning(
+            new Product(p[i].Name(), p[i].Price(), p[i].Requirements()), 0
+        );
+
+        productsOwning.push(productOwning);
+    }
+
+    this.ProductsOwning = ko.observable(new ProductsOwning(productsOwning));
 
     this.CommercantLevel = 0;
 

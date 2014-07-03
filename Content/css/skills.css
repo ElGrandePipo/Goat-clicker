@@ -22,12 +22,16 @@
 .description{
     background-color:#464c4e;
     height: 50px;
+}
+
+
+.repliable{
     max-height: 50px;
     overflow: hidden;
     transition: max-height 1s ease-in .5s;
 }
 
-.description:hover {
+.repliable:hover{
     height: auto;
     max-height: 1500px;
 }

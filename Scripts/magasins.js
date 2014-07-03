@@ -163,8 +163,8 @@ function DemonicStore(){
                         new Effet(EVariableEffet.goatMilkProductivity, new Modificateur(EModificateur.fois, 1.5))
                     ]),
                     ko.observableArray([]),
-                    10),
-                new TBruteSkill(
+                    10
+                ),new TBruteSkill(
                     "M",
                     "",
                     "Content/img/store/lannister-goat.jpg",

@@ -1,9 +1,12 @@
 /**
  * Created by Damien on 6/10/14.
  */
-function Market(prixDuLitre){
+
+function Market(prixDuLitre, products){
     // voir si fluctuation avec evenements krach laitier ...
     this.LiterPrice = ko.observable(prixDuLitre);
+
+    this.SellableProducts = ko.observable(products);
 
     this.GenererRevenu = function (player){
         // les ratios bien au pif

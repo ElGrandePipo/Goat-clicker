@@ -1,13 +1,86 @@
 /**
  * Created by Damien on 6/10/14.
  */
-function SysInfos(){
 
-    this.Market = ko.observable(new Market(100));
+
+// if we follow Arnaud's idea, we won't anymore have only one product
+// but some possible products with : a capacity to be stocked by the player, a price (might change with qty later), and fabrication requirements
+// fabrication requirement will be a product and a qty
+// the player should know that for each existing product, he has a maximum amount of owned, and should be able to buy capacity from the general store
+// the player must be able to create products if he owns the prerequisites
+// first: we get some products ok
+// we add them to the market ok but no logic to retrieve onr anywhere yet (by name, at first (?))
+// todo we create a capacity product(? maybe only for goats at least at first) and an owned products list for player for each existing product
+// we show the reflect of the products existence in both ok for market but todo for player
+
+function Requirement(productName, qty){
+    this.ProductName = ko.observable(productName);
+    this.Quantity = ko.observable(qty);
+}
+
+function Product(name, price, requirements){
+    this.Name = ko.observable(name);
+    this.Price = ko.observable(price);
+    this.Requirements = ko.observableArray(requirements);
+}
+
+function ProductOwning(product, qty)
+{
+    this.Product = ko.observable(product);
+    this.Quantity = ko.observable(qty);
+}
+
+function ProductsOwning(productsOwning){
+    this.ProductsOwning = productsOwning;
+}
+
+ProductsOwning.prototype.ProductByName = function(name){
+    var self = this;
+    var po = self.ProductsOwning();
+    for (var i = 0; i < po.length; i++){
+        if (po[i].Product.Name() == name){
+            return po[i];
+        }
+    }
+}
+
+// tocentralize
+function findElement(arr, propName, propValue) {
+    for (var i=0; i < arr.length; i++)
+        if (arr[i][propName] == propValue)
+            return arr[i];
+
+    // will return undefined if not found; you could return a default instead
+}
+
+function Products(products){
+    this.Products = products;
+}
+
+Products.prototype.Init = function(){
+    var milk = new Product("milk", 3,[]);
+    var basicCheese = new Product("cheese", 10, [new Requirement("milk", 3)]);
+    this.Products().push(milk);
+    this.Products().push(basicCheese);
+}
+
+function SysInfos(){
+    this.Products = ko.observable(
+        new Products(
+            ko.observableArray(
+                [
+                    new Product("milk", 3,[]),
+                    new Product("cheese", 10, [new Requirement("milk", 3)])
+                ]
+            )
+        )
+    );
+
+    this.Market = ko.observable(new Market(100, this.Products()));
     // à remplacer par tab de magasins
     this.Magasins = new MagasinNeutre();
 
-    this.Player = ko.observable(new Player());
+    this.Player = ko.observable(new Player(this.Products()));
 
 
     this.DemonicStore = ko.observable(new DemonicStore());
