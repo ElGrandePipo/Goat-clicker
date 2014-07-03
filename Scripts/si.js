@@ -38,7 +38,7 @@ ProductsOwning.prototype.ProductByName = function(name){
     var self = this;
     var po = self.ProductsOwning();
     for (var i = 0; i < po.length; i++){
-        if (po[i].Product.Name() == name){
+        if (po[i].Product().Name() == name){
             return po[i];
         }
     }
@@ -118,9 +118,15 @@ function SysInfos(){
         // find a way to get a notion of acceleration in clicks so as there is an "interest" at brutalizing its mouse...
 
         this.Player().SellMilk(this.Market());
+        this.Player().ProduceMilk();
         // todo: should not be done this way but right now is...
         // must be applied on Player.SommeDisponible() value changed
        // this.DemonicStore().UpdateAvalaibility(this.Player().SommeDisponible());
+    }
+
+    //todo
+    this.ClickPlayerProduct = function(product){
+        this.Player().CraftProduct(product);
     }
 
     this.UpdateAllInfos = function(){

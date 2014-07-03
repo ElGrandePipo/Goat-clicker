@@ -1,6 +1,12 @@
 /**
  * Created by Damien on 6/10/14.
  */
+
+// todo tomove
+function AddToObservable(koObservable, number){
+    koObservable(koObservable() + number);
+}
+
 function Player(products){
     // introduire enum moralité
     // this.morality = ;
@@ -48,6 +54,24 @@ function Player(products){
     this.SellMilk = function(banque){
         this.SommeDisponible(this.SommeDisponible() + banque.GenererRevenu(this));
         this.LaitAccumule = 0;
+    }
+
+    this.ProduceMilk = function(){
+        var qty = this.ProductsOwning().ProductByName("milk").Quantity();
+        qty += 2;
+        this.ProductsOwning().ProductByName("milk").Quantity(qty);
+    }
+
+    // todo
+    this.CraftProduct = function(product){
+        // for each requirement => reduce qty of product owned
+        var reqs = product.Product().Requirements();
+        for (var i = 0; i < reqs.length; i++){
+            AddToObservable(this.ProductsOwning().ProductByName(reqs[i].ProductName()).Quantity, -reqs[i].Quantity());
+        }
+
+        // for product => increase it by one
+        AddToObservable(this.ProductsOwning().ProductByName(product.Product().Name()).Quantity, 1);
     }
 
     this.CanBuySkill = function(skill){

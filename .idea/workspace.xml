@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="13b3defb-ea88-42d2-ade1-819f7d6d8564" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/magasins.js" afterPath="$PROJECT_DIR$/Scripts/magasins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/market.js" afterPath="$PROJECT_DIR$/Scripts/market.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/player.js" afterPath="$PROJECT_DIR$/Scripts/player.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/si.js" afterPath="$PROJECT_DIR$/Scripts/si.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/css/skills.css" afterPath="$PROJECT_DIR$/Content/css/skills.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/css/stores.css" afterPath="$PROJECT_DIR$/Content/css/stores.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Goat-clicker.iws" />
@@ -32,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="player.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="player.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripts/player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="75" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2975">
+            <state line="69" column="0" selection-start="2010" selection-end="2010" vertical-scroll-proportion="0.3328467" vertical-offset="945" max-vertical-offset="3383">
               <folding />
             </state>
           </provider>
@@ -44,8 +40,9 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="66" selection-start="5023" selection-end="5023" vertical-scroll-proportion="-19.615385" vertical-offset="1309" max-vertical-offset="3927">
+            <state line="106" column="74" selection-start="4975" selection-end="4991" vertical-scroll-proportion="-20.26923" vertical-offset="1275" max-vertical-offset="3961">
               <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -56,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stores.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="stores.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Content/css/stores.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="685">
+            <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
               <folding />
             </state>
           </provider>
@@ -68,7 +65,16 @@
       <file leaf-file-name="knockout.min.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/knockout.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="489" selection-start="17032" selection-end="17032" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="1683">
+            <state line="77" column="0" selection-start="41402" selection-end="41402" vertical-scroll-proportion="0.0" vertical-offset="1011" max-vertical-offset="1683">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="si.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/si.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="128" column="0" selection-start="4304" selection-end="4304" vertical-scroll-proportion="0.0" vertical-offset="1948" max-vertical-offset="2703">
               <folding />
             </state>
           </provider>
@@ -96,15 +102,6 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="731">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="begin.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/begin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="32" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="357">
               <folding />
             </state>
           </provider>
@@ -152,10 +149,11 @@
         <option value="$PROJECT_DIR$/Content/css/skills.css" />
         <option value="$PROJECT_DIR$/Scripts/market.js" />
         <option value="$PROJECT_DIR$/Scripts/magasins.js" />
-        <option value="$PROJECT_DIR$/Scripts/player.js" />
+        <option value="$PROJECT_DIR$/Content/css/stores.css" />
         <option value="$PROJECT_DIR$/Scripts/si.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/Content/css/stores.css" />
+        <option value="$PROJECT_DIR$/Scripts/player.js" />
+        <option value="/vm:52" />
       </list>
     </option>
   </component>
@@ -323,7 +321,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -361,7 +359,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="53" />
+      <option name="time" value="68" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -672,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/knockout.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="489" selection-start="17032" selection-end="17032" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="1683">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/skill.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="0" selection-start="1572" selection-end="1572" vertical-scroll-proportion="1.1889881" vertical-offset="0" max-vertical-offset="1530">
@@ -705,33 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/player.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="75" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2975">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/si.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="41" selection-start="1301" selection-end="1301" vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="2601">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="66" selection-start="5023" selection-end="5023" vertical-scroll-proportion="-19.615385" vertical-offset="1309" max-vertical-offset="3927">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Content/css/skills.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="30" selection-start="58" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="986">
@@ -742,6 +706,41 @@
     <entry file="file://$PROJECT_DIR$/Content/css/stores.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="685">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="74" selection-start="4975" selection-end="4991" vertical-scroll-proportion="-20.26923" vertical-offset="1275" max-vertical-offset="3961">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/knockout.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="41402" selection-end="41402" vertical-scroll-proportion="0.0" vertical-offset="1011" max-vertical-offset="1683">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/si.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="0" selection-start="4304" selection-end="4304" vertical-scroll-proportion="0.0" vertical-offset="1948" max-vertical-offset="2703">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2010" selection-end="2010" vertical-scroll-proportion="0.3328467" vertical-offset="945" max-vertical-offset="3383">
           <folding />
         </state>
       </provider>
